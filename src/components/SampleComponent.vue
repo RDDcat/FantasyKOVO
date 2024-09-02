@@ -3,6 +3,8 @@
 </template>
 <script>
 import {useCacheStore} from '@/stores/cacheStore'
+import {useModalStore} from '@/stores/modalStore'
+import {usePersistStore} from '@/stores/persistStore'
 
 export default {
     components: {
@@ -10,8 +12,10 @@ export default {
     },
     setup(){
         const cacheStore = useCacheStore()
+        const modalStore = useModalStore()
+        const persistStore = usePersistStore()
 
-        return { cacheStore }
+        return { cacheStore, modalStore, persistStore }
     },
     data(){
         return {
