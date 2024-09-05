@@ -9,7 +9,10 @@
             이 텍스트는 화면 크기에 따라 크기가 변합니다.
         </p>
     </div>
-    <img class=" px-4 mobile:w-full desktop:w-[800px]" src="@/assets/court.svg" alt="">
+    <img class="p-4 aspect-square
+        mobile:w-full 
+        desktop:w-[800px]" 
+        src="@/assets/court.png" alt="">
 </template>
 <script>
 import NavigationMenu from '@/components/layout/NavigationMenu.vue'
