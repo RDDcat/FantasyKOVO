@@ -51,12 +51,6 @@ export default {
         }
     },
     methods: {
-        nav(index) {
-            this.index = index;
-            this.modalStore.isMain = index === 0;
-            this.modalStore.isMy = index === 1;
-            this.modalStore.isRanking = index === 2;
-        },
         toggleMenu() {
             this.modalStore.isSidebarMenu = !this.modalStore.isSidebarMenu;
         },
