@@ -1,7 +1,6 @@
 <template>
-<!-- 메인 페이지 첫 랜딩 페이지 -->    
-    <div class="flex">
-    </div>
+<!-- 필요하면 추후 개발 -->
+    <div class="sample">this page for copy</div>
 </template>
 <script>
 import {useCacheStore} from '@/stores/cacheStore'
@@ -10,7 +9,7 @@ import {usePersistStore} from '@/stores/persistStore'
 
 export default {
     components: {
-        
+
     },
     setup(){
         const cacheStore = useCacheStore()
@@ -24,18 +23,9 @@ export default {
 
         }
     },
-    mounted(){
-        // 유저가 팀이 등록되어있다면
-        if(this.persistStore.haveTeam){
-            // 팀 조회 페이지
-            this.$router.push({ name: 'look' });
-        }
-        else{
-            // 팀 만들기 페이지
-            this.$router.push({ name: 'build' })
-        }
-        
-    }
+    methods: {
+
+    },
 }
 </script>
 <style scoped>
