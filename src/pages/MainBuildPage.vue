@@ -1,6 +1,11 @@
 <template>
 <!-- 메인 페이지 팀 등록 -->
     <div class="sample">this page for copy</div>
+    
+    <img class="p-4 aspect-square
+        mobile:w-full 
+        desktop:w-[800px]" 
+        src="@/assets/court.png" alt="">
 </template>
 <script>
 import {useCacheStore} from '@/stores/cacheStore'

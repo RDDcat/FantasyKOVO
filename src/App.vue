@@ -1,14 +1,15 @@
 <template>
-  <MainPage />
+  <NavigationMenu v-show="isNav" />
+  <router-view />
 </template>
 
 <script>
-import MainPage from '@/pages/MainPage.vue'
+import NavigationMenu from '@/components/layout/NavigationMenu.vue'
 
 export default {
   name: 'App',
   components: {
-    MainPage
+    NavigationMenu,
   }
 }
 </script>
