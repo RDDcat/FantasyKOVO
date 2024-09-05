@@ -4,12 +4,12 @@
         <SidebarMenu />
     </transition>
     <!-- 사이드 메뉴 모달 -->
-    <div v-else class="fixed left-0 top-0 w-1/5 h-full z-30" @click="toggleMenu()"></div>
+    <div v-if="modalStore.isSidebarMenu" class="fixed left-0 top-0 w-1/5 h-full z-30" @click="toggleMenu()"></div>
 
     <div class="flex py-4 px-6 w-full z-20 bg-white"
         :class="modalStore.isLoginWarnModal ? 'fixed' : ''">
         <!-- 로고 -->
-        <div class="flex font-bold " @click="nav(0)">
+        <div class="flex font-bold " @click="this.$router.push({ name: 'main' });">
             <img class="my-auto w-8 h-8" src="@/assets/logo-beta.svg" />
         </div>
         <div class="ml-auto mr-4 flex font-bold " @click="this.modalStore.isMobileTutorialModal = true">

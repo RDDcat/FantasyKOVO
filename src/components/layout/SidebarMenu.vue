@@ -42,9 +42,12 @@ export default {
     methods: {
         nav(index) {
             this.index = index;
-            this.modalStore.isMain = index === 0;
-            this.modalStore.isMy = index === 1;
-            this.modalStore.isRanking = index === 2;
+            if(index === 0)
+                this.$router.push({ name: 'team' });
+            if(index === 1)
+                this.$router.push({ name: 'my' });
+            if(index === 2)
+                this.$router.push({ name: 'rank' });
         },
     },
 }
