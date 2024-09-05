@@ -10,11 +10,11 @@ import RankingPage from './pages/RankingPage.vue'
 const router = createRouter({
     history: createWebHashHistory(),
     routes:[
-        { path: "/", component: MainPage},
-        { path: "/build", component: MainBuildPage},
-        { path: "/look", component: MainLookupPage},
-        { path: "/my", component: MyPage},
-        { path: "/rank", component: RankingPage},
+        { path: "/", name:'main', component: MainPage},
+        { path: "/build", name:'build', component: MainBuildPage},
+        { path: "/look", name:'look', component: MainLookupPage},
+        { path: "/my", name:'my', component: MyPage},
+        { path: "/rank", name:'rank', component: RankingPage},
     ]
 });
 
