@@ -12,13 +12,9 @@
         <div class="flex font-bold " @click="this.$router.push({ name: 'main' });">
             <img class="my-auto w-8 h-8" src="@/assets/logo-beta.svg" />
         </div>
-        <div class="ml-auto mr-4 flex font-bold " @click="this.modalStore.isMobileTutorialModal = true">
-            <i class="my-auto fa-regular fa-circle-question hover:text-gray-400" />
-        </div>
-        
 
         <!-- 버거메뉴 -->
-        <a class="my-auto menu-trigger z-40"
+        <a class="ml-auto my-auto menu-trigger z-40"
             :class="{'active-2': modalStore.isSidebarMenu }"
             @click.prevent="toggleMenu">
             <span></span>
