@@ -1,6 +1,4 @@
 import { createRouter, createWebHashHistory } from "vue-router";
-// import MainPage from '@/views/MainPage'
-
 
 import MainPage from '@/pages/MainPage.vue'
 import MainBuildPage from './pages/MainBuildPage.vue'
