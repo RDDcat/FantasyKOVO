@@ -52,13 +52,14 @@
             </div>
         </div>
     </div>
-    
+
     <!-- 선수 카드 섹션 -->
-    <h2 class="text-3xl font-bold mb-6 text-center">인기선수</h2>
+    <h2 class="text-3xl font-bold mb-6 text-center">Most Picked!</h2>
     <div class="grid grid-cols-2 mobile:grid-cols-4 gap-4">
         <!-- 김연경 카드 -->
         <div class="bg-white rounded-lg shadow-md overflow-hidden">
-            <img src="/path/to/martinez-image.jpg" alt="Martinez" class="w-full h-48 object-cover"/>
+            <img :src="isHoveredEgg ? hoverImage1 : defaultImage1" 
+                class="w-full aspect-square object-cover"/>
             <div class="p-4">
                 <h3 class="font-bold text-lg mb-2">김연경</h3>
                 <p class="text-gray-600"></p>
@@ -66,8 +67,11 @@
         </div>
 
         <!-- 이다현 카드 -->
-        <div class="bg-white rounded-lg shadow-md overflow-hidden">
-            <img src="/path/to/player-image.jpg" alt="Player Name" class="w-full h-48 object-cover"/>
+        <div class="bg-white rounded-lg shadow-md overflow-hidden"
+            @mouseenter="isHoveredEgg = true" 
+            @mouseleave="isHoveredEgg = false">
+            <img :src="isHoveredEgg ? hoverImage2 : defaultImage2" 
+                class="w-full aspect-square object-cover"/>
             <div class="p-4">
                 <h3 class="font-bold text-lg mb-2">이다현</h3>
                 <p class="text-gray-600"></p>
@@ -76,7 +80,7 @@
         
         <!-- 허수봉  카드 -->
         <div class="bg-white rounded-lg shadow-md overflow-hidden">
-            <img src="/path/to/pickford-image.jpg" alt="Pickford" class="w-full h-48 object-cover"/>
+            <img src="@/assets/players/skywalkers/sky_OP_허수봉.png" alt="Pickford" class="w-full aspect-square object-cover"/>
             <div class="p-4">
                 <h3 class="font-bold text-lg mb-2">허수봉</h3>
                 <p class="text-gray-600"></p>
@@ -85,7 +89,7 @@
 
         <!-- 정지석 카드 -->
         <div class="bg-white rounded-lg shadow-md overflow-hidden">
-            <img src="/path/to/raya-image.jpg" alt="Raya" class="w-full h-48 object-cover"/>
+            <img src="@/assets/players/jumbos/jum_OH_정지석.png" alt="Raya" class="w-full aspect-square object-cover"/>
             <div class="p-4">
                 <h3 class="font-bold text-lg mb-2">정지석 <div class="text-white">stop stone</div> </h3>
                 <p class="text-gray-600"></p>
@@ -112,9 +116,15 @@ export default {
         const persistStore = usePersistStore()
 
         const isHovered = ref(false)
+        const isHoveredEgg = ref(false)
         const currentTextIndex = ref(0)
         const texts = ref(['Fantasy KOVO League', '최고의 팀을 만들어보세요', '화면을 클릭하여 시작하기!'])
         let intervalId = null
+
+        const defaultImage1 = './assets/players/pinkspiders/pin_OH_김연경.png'
+        const hoverImage1 = './assets/egg/easteregg2.gif'
+        const defaultImage2 = './assets/players/hillstate/hil_MB_이다현.png'
+        const hoverImage2 = './assets/egg/easteregg1.gif'
 
         const rotateText = () => {
         currentTextIndex.value = (currentTextIndex.value + 1) % texts.value.length
@@ -130,6 +140,11 @@ export default {
 
         return {
             isHovered,
+            isHoveredEgg,
+            defaultImage1,
+            defaultImage2,
+            hoverImage1,
+            hoverImage2,
             currentTextIndex,
             texts,
             cacheStore,
