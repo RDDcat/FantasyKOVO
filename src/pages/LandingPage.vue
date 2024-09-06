@@ -34,7 +34,7 @@
 
     <!-- 홍보 카드 섹션 -->
     <div class="grid grid-cols-1 desktop:grid-cols-2 gap-6 mb-12">
-        <!-- Create and Join Leagues 카드 -->
+        <!-- Leagues 카드 -->
         <div class="bg-gradient-to-r from-violet-500 to-blue-600 rounded-lg shadow-lg p-6 text-white">
             <h2 class="text-2xl font-bold mb-4">최고의 배잘알을 가려라!</h2>
             <p class="mb-4">다른 유저와 경쟁하여 최고가 되어보세요!</p>
@@ -48,7 +48,7 @@
             <h2 class="text-2xl font-bold mb-4">선수단을 모집해보세요!</h2>
             <p class="mb-4">주어진 예산안에서 최고의 선수단을 구성하세요. </p>
             <div class="flex w-full">
-                <button class="ml-auto bg-white text-red-600 font-bold py-2 px-4 rounded">시작하기</button>
+                <button class="ml-auto bg-white text-red-600 font-bold py-2 px-4 rounded"  @click="goBuild()">시작하기</button>
             </div>
         </div>
     </div>
