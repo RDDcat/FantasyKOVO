@@ -27,11 +27,11 @@
         <div v-for="(player, index) in displayedPlayers" :key="index"
             class="relative bg-white rounded-lg shadow-md overflow-hidden cursor-pointer"
             :class="{ 'shadow-2xl ring-4 ring-blue-600': isPlayerSelected(player) }"
-            @click.prevent="togglePlayerSelection(player)">
+            @click.stop="togglePlayerSelection(player)">
             <img :src="player.img" 
                 class="w-full aspect-square object-cover"/>
             <!-- 선수 즐겨찾기 -->
-            <div class="absolute top-4 right-4 z-10" @click.prevent="toggleLikePlayer(player.id)">
+            <div class="absolute top-4 right-4 z-10" @click.stop="toggleLikePlayer(player.id)">
                 <i v-if="isPlayerLiked(player.id)" class="fa-solid fa-stars" style="color: #FFD43B;"></i>
                 <i v-else class="fa-regular fa-stars"></i>
             </div>
@@ -100,28 +100,28 @@ export default {
         })
 
         const toggleLikePlayer = (id) => {
-    // id가 유효하지 않으면 함수 종료
-    if (typeof id === 'undefined') {
-        console.error("Invalid ID:", id);
-        return;
-    }
+            // id가 유효하지 않으면 함수 종료
+            if (typeof id === 'undefined') {
+                console.error("Invalid ID:", id);
+                return;
+            }
 
-    // likePlayerList가 정의되지 않았을 경우 빈 객체로 초기화
-    if (!persistStore.likePlayerList) {
-        persistStore.likePlayerList = {};
-    }
+            // likePlayerList가 정의되지 않았을 경우 빈 객체로 초기화
+            if (!persistStore.likePlayerList) {
+                persistStore.likePlayerList = {};
+            }
 
-    // 좋아하는 선수 리스트에서 해당 id가 있는지 확인
-    if (persistStore.likePlayerList[id]) {
-        console.log("Removing from favorites:", id);
-        // 이미 좋아하는 선수 목록에 있으면 제거
-        delete persistStore.likePlayerList[id];
-    } else {
-        console.log("Adding to favorites:", id);
-        // 목록에 없으면 추가
-        persistStore.likePlayerList[id] = true;
-    }
-};
+            // 좋아하는 선수 리스트에서 해당 id가 있는지 확인
+            if (persistStore.likePlayerList[id]) {
+                console.log("Removing from favorites:", id);
+                // 이미 좋아하는 선수 목록에 있으면 제거
+                delete persistStore.likePlayerList[id];
+            } else {
+                console.log("Adding to favorites:", id);
+                // 목록에 없으면 추가
+                persistStore.likePlayerList[id] = true;
+            }
+        };
         const isPlayerLiked = (id) => {
             // likePlayerList에 id가 존재하는지 확인, 없으면 undefined 대신 false 반환
             const likeList = persistStore.likePlayerList || {};
