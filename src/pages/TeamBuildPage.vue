@@ -19,13 +19,12 @@
     </div>
 
     <!-- 선수 리스트 -->
-    
     <!-- 선수 카드 섹션 -->
     <h2 class="text-3xl font-bold mb-6 text-center">선수를 선택해주세요</h2>
     <div class="grid grid-cols-4 gap-4 p-20
                 mobile:grid-cols-2 mobile:p-4 ">
         <!-- 선수 카드 -->
-        <div v-for="(player, index) in cacheStore.players" :key="index"
+        <div v-for="(player, index) in displayedPlayers" :key="index"
             class="bg-white rounded-lg shadow-md overflow-hidden cursor-pointer"
             :class="{ 'shadow-2xl ring-4 ring-blue-600': isPlayerSelected(player) }"
             @click="togglePlayerSelection(player)">
@@ -44,7 +43,7 @@
 </template>
 
 <script>
-import { ref, computed } from 'vue'
+import { ref, computed, onMounted } from 'vue'
 import { useCacheStore } from '@/stores/cacheStore'
 import { useModalStore } from '@/stores/modalStore'
 import { usePersistStore } from '@/stores/persistStore'
@@ -55,7 +54,7 @@ export default {
         const modalStore = useModalStore()
         const persistStore = usePersistStore()
 
-
+        const displayedPlayers = ref([])
         const selectedPlayers = ref([null, null, null, null, null, null])
 
         const positions = [
@@ -85,14 +84,26 @@ export default {
             }
         }
 
+        const selectRandomPlayers = () => {
+            // cacheStore.players에서 랜덤하게 8명 선택
+            const shuffled = [...cacheStore.players].sort(() => 0.5 - Math.random())
+            displayedPlayers.value = shuffled.slice(0, 8)
+        }
+
+        onMounted(() => {
+            selectRandomPlayers()
+        })
+
         return { 
             cacheStore, 
             modalStore, 
             persistStore,
+            displayedPlayers,
             selectedPlayers,
             positions,
             isPlayerSelected,
-            togglePlayerSelection
+            togglePlayerSelection,
+            selectRandomPlayers
         }
     }
 }
