@@ -46,7 +46,7 @@
         <!-- Pick Your Squad 카드 -->
         <div class="bg-gradient-to-r from-red-500 to-violet-600  rounded-lg shadow-lg p-6 text-white">
             <h2 class="text-2xl font-bold mb-4">선수단을 모집해보세요!</h2>
-            <p class="mb-4">주어진 예산안에서 최고의 선수단을 구성하세요. </p>
+            <p class="mb-4">주어진 예산 안에서 최고의 선수단을 구성하세요. </p>
             <div class="flex w-full">
                 <button class="ml-auto bg-white text-red-600 font-bold py-2 px-4 rounded"  @click="goBuild()">시작하기</button>
             </div>
