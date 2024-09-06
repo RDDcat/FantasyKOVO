@@ -39,7 +39,7 @@
             <h2 class="text-2xl font-bold mb-4">최고의 배잘알을 가려라!</h2>
             <p class="mb-4">다른 유저와 경쟁하여 최고가 되어보세요!</p>
             <div class="flex w-full">
-                <button class="ml-auto bg-white text-blue-600 font-bold py-2 px-4 rounded">랭킹보기</button>
+                <button class="ml-auto bg-white text-blue-600 font-bold py-2 px-4 rounded" @click="goRank()">랭킹보기</button>
             </div>
         </div>
 
@@ -160,6 +160,9 @@ export default {
     methods: {
         goBuild(){
             this.$router.push({ name: 'build' });
+        },
+        goRank(){
+            this.$router.push({ name: 'rank' });
         }
     },
 }
