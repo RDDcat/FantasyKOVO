@@ -25,11 +25,16 @@
                 mobile:grid-cols-2 mobile:p-4 ">
         <!-- 선수 카드 -->
         <div v-for="(player, index) in displayedPlayers" :key="index"
-            class="bg-white rounded-lg shadow-md overflow-hidden cursor-pointer"
+            class="relative bg-white rounded-lg shadow-md overflow-hidden cursor-pointer"
             :class="{ 'shadow-2xl ring-4 ring-blue-600': isPlayerSelected(player) }"
-            @click="togglePlayerSelection(player)">
+            @click.prevent="togglePlayerSelection(player)">
             <img :src="player.img" 
                 class="w-full aspect-square object-cover"/>
+            <!-- 선수 즐겨찾기 -->
+            <div class="absolute top-4 right-4 z-10" @click.prevent="toggleLikePlayer(player.id)">
+                <i v-if="isPlayerLiked(player.id)" class="fa-solid fa-stars" style="color: #FFD43B;"></i>
+                <i v-else class="fa-regular fa-stars"></i>
+            </div>
             <div class="p-4">
                 <h3 class="font-bold text-lg mb-2">{{player.name}}</h3>
                 <p class="text-gray-600">{{player.position}}</p>
@@ -87,12 +92,41 @@ export default {
         const selectRandomPlayers = () => {
             // cacheStore.players에서 랜덤하게 8명 선택
             const shuffled = [...cacheStore.players].sort(() => 0.5 - Math.random())
-            displayedPlayers.value = shuffled.slice(0, 8)
+            displayedPlayers.value = shuffled.slice(0, 30)
         }
 
         onMounted(() => {
             selectRandomPlayers()
         })
+
+        const toggleLikePlayer = (id) => {
+    // id가 유효하지 않으면 함수 종료
+    if (typeof id === 'undefined') {
+        console.error("Invalid ID:", id);
+        return;
+    }
+
+    // likePlayerList가 정의되지 않았을 경우 빈 객체로 초기화
+    if (!persistStore.likePlayerList) {
+        persistStore.likePlayerList = {};
+    }
+
+    // 좋아하는 선수 리스트에서 해당 id가 있는지 확인
+    if (persistStore.likePlayerList[id]) {
+        console.log("Removing from favorites:", id);
+        // 이미 좋아하는 선수 목록에 있으면 제거
+        delete persistStore.likePlayerList[id];
+    } else {
+        console.log("Adding to favorites:", id);
+        // 목록에 없으면 추가
+        persistStore.likePlayerList[id] = true;
+    }
+};
+        const isPlayerLiked = (id) => {
+            // likePlayerList에 id가 존재하는지 확인, 없으면 undefined 대신 false 반환
+            const likeList = persistStore.likePlayerList || {};
+            return !!likeList[id];
+        }
 
         return { 
             cacheStore, 
@@ -102,8 +136,10 @@ export default {
             selectedPlayers,
             positions,
             isPlayerSelected,
+            toggleLikePlayer,
             togglePlayerSelection,
-            selectRandomPlayers
+            selectRandomPlayers,
+            isPlayerLiked,
         }
     }
 }
