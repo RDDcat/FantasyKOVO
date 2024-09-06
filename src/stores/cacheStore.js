@@ -106,6 +106,103 @@ export const useCacheStore = defineStore('cacheStore', {
                 position: '세터',
                 team: { name: "대전 삼성화재 블루팡스" }
             },
+            // 인천 대한항공 점보스
+            {
+                name: "강승일",
+                img: './assets/players/jumbos/jum_L_강승일.png',
+                position: '리베로',
+                team: { name: "인천 대한항공 점보스" }
+            },
+            {
+                name: "송민근",
+                img: './assets/players/jumbos/jum_L_송민근.png',
+                position: '리베로',
+                team: { name: "인천 대한항공 점보스" }
+            },
+            {
+                name: "정성민",
+                img: './assets/players/jumbos/jum_L_정성민.png',
+                position: '리베로',
+                team: { name: "인천 대한항공 점보스" }
+            },
+            {
+                name: "김규민",
+                img: './assets/players/jumbos/jum_MB_김규민.png',
+                position: '미들 블로커',
+                team: { name: "인천 대한항공 점보스" }
+            },
+            {
+                name: "김민재",
+                img: './assets/players/jumbos/jum_MB_김민재.png',
+                position: '미들 블로커',
+                team: { name: "인천 대한항공 점보스" }
+            },
+            {
+                name: "이수황",
+                img: './assets/players/jumbos/jum_MB_이수황.png',
+                position: '미들 블로커',
+                team: { name: "인천 대한항공 점보스" }
+            },
+            {
+                name: "조재영",
+                img: './assets/players/jumbos/jum_MB_조재영.png',
+                position: '미들 블로커',
+                team: { name: "인천 대한항공 점보스" }
+            },
+            {
+                name: "진지위",
+                img: './assets/players/jumbos/jum_MB_진지위.png',
+                position: '미들 블로커',
+                team: { name: "인천 대한항공 점보스" }
+            },
+            {
+                name: "곽승석",
+                img: './assets/players/jumbos/jum_OH_곽승석.png',
+                position: '아웃사이드 히터',
+                team: { name: "인천 대한항공 점보스" }
+            },
+            {
+                name: "이준",
+                img: './assets/players/jumbos/jum_OH_이준.png',
+                position: '아웃사이드 히터',
+                team: { name: "인천 대한항공 점보스" }
+            },
+            {
+                name: "정지석",
+                img: './assets/players/jumbos/jum_OH_정지석.png',
+                position: '아웃사이드 히터',
+                team: { name: "인천 대한항공 점보스" }
+            },
+            {
+                name: "정한용",
+                img: './assets/players/jumbos/jum_OH_정한용.png',
+                position: '아웃사이드 히터',
+                team: { name: "인천 대한항공 점보스" }
+            },
+            {
+                name: "김준호",
+                img: './assets/players/jumbos/jum_OP_김준호.png',
+                position: '아포짓 스파이커',
+                team: { name: "인천 대한항공 점보스" }
+            },
+            {
+                name: "김형진",
+                img: './assets/players/jumbos/jum_S_김형진.png',
+                position: '세터',
+                team: { name: "인천 대한항공 점보스" }
+            },
+            {
+                name: "유광우",
+                img: './assets/players/jumbos/jum_S_유광우.png',
+                position: '세터',
+                team: { name: "인천 대한항공 점보스" }
+            },
+            {
+                name: "한선수",
+                img: './assets/players/jumbos/jum_S_한선수.png',
+                position: '세터',
+                team: { name: "인천 대한항공 점보스" }
+            },
         ],
     }),
 })
