@@ -4,7 +4,8 @@
     <h1 class="text-3xl font-bold mb-6 text-center">판타지 배구 리그 랭킹</h1>
 
     <!-- 사용자의 순위 -->
-    <div class="bg-blue-100 p-4 rounded-lg shadow mb-8">
+    <div class="bg-blue-100 p-4 rounded-lg shadow mb-8" @click="$router.push({ name: 'my' });
+">
         <h2 class="text-xl font-semibold mb-2">내 순위</h2>
         <div class="flex justify-between items-center">
             <span class="text-2xl font-bold">{{ userRank }}위</span>
