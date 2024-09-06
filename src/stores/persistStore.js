@@ -4,7 +4,9 @@ import { defineStore } from 'pinia'
 // persist 적용되어있음
 export const usePersistStore = defineStore('persistStore', {
     state: ()=>({
-
+        haveTeam:false,
+        likePlayerList: {},
+        selectedTeam: null,
     }),
     persist: true,
 })

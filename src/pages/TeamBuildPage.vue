@@ -43,6 +43,11 @@
         </div>
     </div>
 
+    <!-- 팀 저장 버튼 -->
+    <button @click="saveTeam" class="mt-8 px-6 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600">
+        팀 저장
+    </button>
+
     <div class="h-96"></div>
 </div>
 </template>
@@ -90,7 +95,7 @@ export default {
         }
 
         const selectRandomPlayers = () => {
-            // cacheStore.players에서 랜덤하게 8명 선택
+            // cacheStore.players에서 랜덤하게 30명 선택
             const shuffled = [...cacheStore.players].sort(() => 0.5 - Math.random())
             displayedPlayers.value = shuffled.slice(0, 30)
         }
@@ -100,32 +105,32 @@ export default {
         })
 
         const toggleLikePlayer = (id) => {
-            // id가 유효하지 않으면 함수 종료
             if (typeof id === 'undefined') {
                 console.error("Invalid ID:", id);
                 return;
             }
 
-            // likePlayerList가 정의되지 않았을 경우 빈 객체로 초기화
             if (!persistStore.likePlayerList) {
                 persistStore.likePlayerList = {};
             }
 
-            // 좋아하는 선수 리스트에서 해당 id가 있는지 확인
             if (persistStore.likePlayerList[id]) {
-                console.log("Removing from favorites:", id);
-                // 이미 좋아하는 선수 목록에 있으면 제거
                 delete persistStore.likePlayerList[id];
             } else {
-                console.log("Adding to favorites:", id);
-                // 목록에 없으면 추가
                 persistStore.likePlayerList[id] = true;
             }
         };
+
         const isPlayerLiked = (id) => {
-            // likePlayerList에 id가 존재하는지 확인, 없으면 undefined 대신 false 반환
             const likeList = persistStore.likePlayerList || {};
             return !!likeList[id];
+        }
+
+        const saveTeam = () => {
+            // 선택된 선수들을 persistStore에 저장
+            persistStore.selectedTeam = selectedPlayers.value.map(p => p ? p.id : null)
+            // 모달 또는 알림으로 저장 완료 메시지 표시
+            modalStore.showModal('팀 저장 완료', '선택한 팀이 성공적으로 저장되었습니다.')
         }
 
         return { 
@@ -140,6 +145,7 @@ export default {
             togglePlayerSelection,
             selectRandomPlayers,
             isPlayerLiked,
+            saveTeam,
         }
     }
 }

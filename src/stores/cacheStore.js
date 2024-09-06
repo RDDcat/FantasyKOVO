@@ -3,6 +3,17 @@ import { defineStore } from 'pinia'
 // use + 스토어 이름 << 컨벤션임
 export const useCacheStore = defineStore('cacheStore', {
     state: ()=>({
+        myTeam:{
+            players:[
+                {
+                    id:0,
+                    name: "박유현",
+                    img: './assets/players/bluefangs/blu_L_박유현.png',
+                    position: '리베로',
+                    team: { name: "대전 삼성화재 블루팡스" }
+                },
+            ],
+        },
         players:[
             {
                 id:0,
