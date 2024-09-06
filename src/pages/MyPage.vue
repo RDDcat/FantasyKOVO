@@ -1,7 +1,7 @@
 <template>
 <!-- 마이페이지 -->    
 <div class="flex-col items-center">
-    <h1 class="p-20 mobile:p-4 font-bold text-xl">내 선수단</h1>
+    <h1 class="px-20 py-6 mobile:p-4 font-bold text-xl">내 선수단</h1>
     <div class="grid grid-cols-3 gap-4 p-20
                 mobile:grid-cols-3 mobile:p-4">
         <!-- 내 선수단 카드 -->

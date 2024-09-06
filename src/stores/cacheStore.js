@@ -12,6 +12,41 @@ export const useCacheStore = defineStore('cacheStore', {
                     position: '리베로',
                     team: { name: "대전 삼성화재 블루팡스" }
                 },
+                {
+                    id:3,
+                    name: "김재휘",
+                    img: './assets/players/bluefangs/blu_MB_김재휘.png',
+                    position: '미들 블로커',
+                    team: { name: "대전 삼성화재 블루팡스" }
+                },
+                {
+                    id:21,
+                    name: "김민재",
+                    img: './assets/players/jumbos/jum_MB_김민재.png',
+                    position: '미들 블로커',
+                    team: { name: "인천 대한항공 점보스" }
+                },
+                {
+                    id:27,
+                    name: "정지석",
+                    img: './assets/players/jumbos/jum_OH_정지석.png',
+                    position: '아웃사이드 히터',
+                    team: { name: "인천 대한항공 점보스" }
+                },
+                {
+                    id:13,
+                    name: "이현진",
+                    img: './assets/players/bluefangs/blu_OP_이현진.png',
+                    position: '아포짓 스파이커',
+                    team: { name: "대전 삼성화재 블루팡스" }
+                },
+                {
+                    id:32,
+                    name: "한선수",
+                    img: './assets/players/jumbos/jum_S_한선수.png',
+                    position: '세터',
+                    team: { name: "인천 대한항공 점보스" }
+                },
             ],
         },
         players:[
@@ -247,6 +282,7 @@ export const useCacheStore = defineStore('cacheStore', {
                 position: '세터',
                 team: { name: "인천 대한항공 점보스" }
             },
+            // 
         ],
     }),
 })
