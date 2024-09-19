@@ -10,9 +10,9 @@
             alt=""
         >
         <!-- 글씨 컨테이너 -->
-        <div class="absolute top-1/2 transform -translate-y-1/2 z-10 overflow-hidden left-44
-                    desktop:left-[45%]  desktop:text-4xl  
-                    mobile:left-0 mobile:text-xl ">
+        <div class="absolute top-1/2 transform -translate-y-1/2 z-10 overflow-hidden
+                    desktop:left-[40%]  desktop:text-4xl  
+                    mobile:right-4 mobile:text-lg ">
             <transition name="slide-fade" mode="out-in">
                 <div 
                     :key="currentTextIndex" 
