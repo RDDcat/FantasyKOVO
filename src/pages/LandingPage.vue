@@ -61,8 +61,11 @@
             <img :src="isHoveredEgg ? hoverImage1 : defaultImage1" 
                 class="w-full aspect-square object-cover"/>
             <div class="p-4">
-                <h3 class="font-bold text-lg mb-2">김연경</h3>
-                <p class="text-gray-600"></p>
+                <h3 class="flex font-bold text-lg mb-2">김연경 
+                    <img src="@/assets/icon/outside-hitter.svg" class="w-4"/> 
+                    <div class="my-auto text-xs">OH</div> 
+                </h3>
+                <p class="text-gray-600 text-sm">핑크 스파이더스</p>
             </div>
         </div>
 
@@ -73,8 +76,11 @@
             <img :src="isHoveredEgg ? hoverImage2 : defaultImage2" 
                 class="w-full aspect-square object-cover"/>
             <div class="p-4">
-                <h3 class="font-bold text-lg mb-2">이다현</h3>
-                <p class="text-gray-600"></p>
+                <h3 class="flex font-bold text-lg mb-2">이다현 
+                    <img src="@/assets/icon/middle-blocker.svg" class="w-4"/> 
+                    <div class="my-auto text-xs">MB</div> 
+                </h3>
+                <p class="text-gray-600 text-sm">힐스테이트</p>
             </div>
         </div>
         
@@ -82,8 +88,11 @@
         <div class="bg-white rounded-lg shadow-md overflow-hidden">
             <img src="@/assets/players/skywalkers/sky_OP_허수봉.png" alt="Pickford" class="w-full aspect-square object-cover"/>
             <div class="p-4">
-                <h3 class="font-bold text-lg mb-2">허수봉</h3>
-                <p class="text-gray-600"></p>
+                <h3 class="flex font-bold text-lg mb-2">허수봉 
+                    <img src="@/assets/icon/outside-hitter.svg" class="w-4"/> 
+                    <div class="my-auto text-xs">OH</div> 
+                </h3>
+                <p class="text-gray-600 text-sm">스카이워커스</p>
             </div>
         </div>
 
@@ -91,8 +100,11 @@
         <div class="bg-white rounded-lg shadow-md overflow-hidden">
             <img src="@/assets/players/jumbos/jum_OH_정지석.png" alt="Raya" class="w-full aspect-square object-cover"/>
             <div class="p-4">
-                <h3 class="font-bold text-lg mb-2">정지석 <div class="text-white">stop stone</div> </h3>
-                <p class="text-gray-600"></p>
+                <h3 class="flex font-bold text-lg mb-2">정지석 
+                    <img src="@/assets/icon/outside-hitter.svg" class="w-4"/> 
+                    <div class="my-auto text-xs">OH</div> 
+                </h3>
+                <p class="text-gray-600 text-sm">점보스</p>
             </div>
         </div>
         
