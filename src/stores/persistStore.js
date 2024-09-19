@@ -7,6 +7,25 @@ export const usePersistStore = defineStore('persistStore', {
         haveTeam:false,
         likePlayerList: {},
         selectedTeam: null,
+
+        // 포지션 데이터
+        positions:{
+            OH:{
+
+            },
+            OP:{
+
+            },
+            MB:{
+
+            },
+            S:{
+
+            },
+            L:{
+
+            },
+        },
     }),
     persist: true,
 })
