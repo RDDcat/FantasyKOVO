@@ -37,7 +37,7 @@
             </div>
             <div class="p-4">
                 <h3 class="font-bold text-lg mb-2">{{player.name}}</h3>
-                <p class="text-gray-600">{{player.position}}</p>
+                <p class="flex text-gray-600">{{player.position.name}} <img class="w-4" :src="player.position.img" /></p>
                 <p class="text-gray-600">{{player.team.name}}</p>
             </div>
         </div>
