@@ -55,7 +55,7 @@
 
     <!-- 선수 카드 섹션 -->
     <h2 class="text-3xl font-bold mb-6 text-center">Most Picked!</h2>
-    <div class="grid grid-cols-2 mobile:grid-cols-4 gap-4">
+    <div class="grid grid-cols-4 mobile:grid-cols-2 gap-4">
         <!-- 김연경 카드 -->
         <div class="bg-white rounded-lg shadow-md overflow-hidden">
             <img :src="isHoveredEgg ? hoverImage1 : defaultImage1" 
