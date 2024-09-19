@@ -399,7 +399,147 @@ export const useCacheStore = defineStore('cacheStore', {
                 },
                 team: { name: "인천 대한항공 점보스" }
             },
-            // 
+            // 천안 현대캐피탈 스카이워커스
+            {
+                id:33,
+                name: "허수봉",
+                img: './assets/players/skywalkers/sky_OP_허수봉.png',
+                position: {
+                    name:"아포짓 스파이커",
+                    img:"./assets/icon/opposite-spiker.svg",
+                },
+                team: { name: "천안 현대캐피탈 스카이워커스" }
+            },
+            {
+                id:34,
+                name: "문성빈",
+                img: './assets/players/skywalkers/sky_OP_문성빈.png',
+                position: {
+                    name:"아포짓 스파이커",
+                    img:"./assets/icon/opposite-spiker.svg",
+                },
+                team: { name: "천안 현대캐피탈 스카이워커스" }
+            },
+            {
+                id:35,
+                name: "김선호",
+                img: './assets/players/skywalkers/sky_OH_김선호.png',
+                position: {
+                    name:"아웃사이드 히터",
+                    img:"./assets/icon/outside-hitter.svg",
+                },
+                team: { name: "천안 현대캐피탈 스카이워커스" }
+            },
+            {
+                id:36,
+                name: "전광인",
+                img: './assets/players/skywalkers/sky_OH_전광인.png',
+                position: {
+                    name:"아웃사이드 히터",
+                    img:"./assets/icon/outside-hitter.svg",
+                },
+                team: { name: "천안 현대캐피탈 스카이워커스" }
+            },
+            {
+                id:37,
+                name: "이승준",
+                img: './assets/players/skywalkers/sky_OH_이승준.png',
+                position: {
+                    name:"아웃사이드 히터",
+                    img:"./assets/icon/outside-hitter.svg",
+                },
+                team: { name: "천안 현대캐피탈 스카이워커스" }
+            },
+            {
+                id:38,
+                name: "이시우",
+                img: './assets/players/skywalkers/sky_OH_이시우.png',
+                position: {
+                    name:"아웃사이드 히터",
+                    img:"./assets/icon/outside-hitter.svg",
+                },
+                team: { name: "천안 현대캐피탈 스카이워커스" }
+            },
+            {
+                id:39,
+                name: "이현승",
+                img: './assets/players/skywalkers/sky_S_이현승.png',
+                position: {
+                    name:"세터",
+                    img:"./assets/icon/setter.svg",
+                },
+                team: { name: "천안 현대캐피탈 스카이워커스" }
+            },
+            {
+                id:40,
+                name: "이준협",
+                img: './assets/players/skywalkers/sky_S_이준협.png',
+                position: {
+                    name:"세터",
+                    img:"./assets/icon/setter.svg",
+                },
+                team: { name: "천안 현대캐피탈 스카이워커스" }
+            },
+            {
+                id:41,
+                name: "차영석",
+                img: './assets/players/skywalkers/sky_MB_차영석.png',
+                position: {
+                    name:"미들 블로커",
+                    img:"./assets/icon/middle-blocker.svg",
+                },
+                team: { name: "천안 현대캐피탈 스카이워커스" }
+            },
+            {
+                id:42,
+                name: "김진영",
+                img: './assets/players/skywalkers/sky_MB_김진영.png',
+                position: {
+                    name:"미들 블로커",
+                    img:"./assets/icon/middle-blocker.svg",
+                },
+                team: { name: "천안 현대캐피탈 스카이워커스" }
+            },
+            {
+                id:43,
+                name: "최민호",
+                img: './assets/players/skywalkers/sky_MB_최민호.png',
+                position: {
+                    name:"미들 블로커",
+                    img:"./assets/icon/middle-blocker.svg",
+                },
+                team: { name: "천안 현대캐피탈 스카이워커스" }
+            },
+            {
+                id:44,
+                name: "정태준",
+                img: './assets/players/skywalkers/sky_MB_정태준.png',
+                position: {
+                    name:"미들 블로커",
+                    img:"./assets/icon/middle-blocker.svg",
+                },
+                team: { name: "천안 현대캐피탈 스카이워커스" }
+            },
+            {
+                id:45,
+                name: "박경민",
+                img: './assets/players/skywalkers/sky_R_박경민.png',
+                position: {
+                    name:"리베로",
+                    img:"./assets/icon/libero.svg",
+                },
+                team: { name: "천안 현대캐피탈 스카이워커스" }
+            },
+            {
+                id:46,
+                name: "오은렬",
+                img: './assets/players/skywalkers/sky_R_오은렬.png',
+                position: {
+                    name:"리베로",
+                    img:"./assets/icon/libero.svg",
+                },
+                team: { name: "천안 현대캐피탈 스카이워커스" }
+            },
         ],
     }),
 })
