@@ -20,7 +20,7 @@
 
     <!-- 선수 리스트 -->
     <!-- 선수 카드 섹션 -->
-    <h2 class="text-3xl font-bold mb-6 text-center">선수를 선택해주세요</h2>
+    <h2 class="desktop:text-3xl mobile:text-2xl font-bold mb-6 text-center">선수를 선택해주세요</h2>
     <div class="grid grid-cols-4 gap-4 p-20
                 mobile:grid-cols-2 mobile:p-4 ">
         <!-- 선수 카드 -->
