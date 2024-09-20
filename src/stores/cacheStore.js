@@ -1033,6 +1033,157 @@ export const useCacheStore = defineStore('cacheStore', {
                 },
                 team: { name: "안산 OK저축은행 읏맨" }
             },
+            // 의정부 KB손해보험 스타즈
+            {
+                id:96,
+                name: "전종녕",
+                img: './assets/players/stars/sta_OP_전종녕.png',
+                position: {
+                    name:"아포짓 스파이커",
+                    img:"./assets/icon/opposite-spiker.svg",
+                },
+                team: { name: "의정부 KB손해보험 스타즈" }
+            },
+            {
+                id:97,
+                name: "정동근",
+                img: './assets/players/stars/sta_OH_정동근.png',
+                position: {
+                    name:"아웃사이드 히터",
+                    img:"./assets/icon/outside-hitter.svg",
+                },
+                team: { name: "의정부 KB손해보험 스타즈" }
+            },
+            {
+                id:98,
+                name: "배상진",
+                img: './assets/players/stars/sta_OH_배상진.png',
+                position: {
+                    name:"아웃사이드 히터",
+                    img:"./assets/icon/outside-hitter.svg",
+                },
+                team: { name: "의정부 KB손해보험 스타즈" }
+            },
+            {
+                id:99,
+                name: "황경민",
+                img: './assets/players/stars/sta_OH_황경민.png',
+                position: {
+                    name:"아웃사이드 히터",
+                    img:"./assets/icon/outside-hitter.svg",
+                },
+                team: { name: "의정부 KB손해보험 스타즈" }
+            },
+            {
+                id:100,
+                name: "손준영",
+                img: './assets/players/stars/sta_OH_손준영.png',
+                position: {
+                    name:"아웃사이드 히터",
+                    img:"./assets/icon/outside-hitter.svg",
+                },
+                team: { name: "의정부 KB손해보험 스타즈" }
+            },
+            {
+                id:101,
+                name: "윤서진",
+                img: './assets/players/stars/sta_OH_윤서진.png',
+                position: {
+                    name:"아웃사이드 히터",
+                    img:"./assets/icon/outside-hitter.svg",
+                },
+                team: { name: "의정부 KB손해보험 스타즈" }
+            },
+            {
+                id:102,
+                name: "황승빈",
+                img: './assets/players/stars/sta_S_황승빈.png',
+                position: {
+                    name:"세터",
+                    img:"./assets/icon/setter.svg",
+                },
+                team: { name: "의정부 KB손해보험 스타즈" }
+            },
+            {
+                id:103,
+                name: "박현빈",
+                img: './assets/players/stars/sta_S_박현빈.png',
+                position: {
+                    name:"세터",
+                    img:"./assets/icon/setter.svg",
+                },
+                team: { name: "의정부 KB손해보험 스타즈" }
+            },
+            {
+                id:104,
+                name: "최요한",
+                img: './assets/players/stars/sta_MB_최요한.png',
+                position: {
+                    name:"미들 블로커",
+                    img:"./assets/icon/middle-blocker.svg",
+                },
+                team: { name: "의정부 KB손해보험 스타즈" }
+            },
+            {
+                id:105,
+                name: "우상조",
+                img: './assets/players/stars/sta_MB_우상조.png',
+                position: {
+                    name:"미들 블로커",
+                    img:"./assets/icon/middle-blocker.svg",
+                },
+                team: { name: "의정부 KB손해보험 스타즈" }
+            },
+            {
+                id:106,
+                name: "박상하",
+                img: './assets/players/stars/sta_MB_박상하.png',
+                position: {
+                    name:"미들 블로커",
+                    img:"./assets/icon/middle-blocker.svg",
+                },
+                team: { name: "의정부 KB손해보험 스타즈" }
+            },
+            {
+                id:107,
+                name: "장하랑",
+                img: './assets/players/stars/sta_MB_장하랑.png',
+                position: {
+                    name:"미들 블로커",
+                    img:"./assets/icon/middle-blocker.svg",
+                },
+                team: { name: "의정부 KB손해보험 스타즈" }
+            },
+            {
+                id:108,
+                name: "한국민",
+                img: './assets/players/stars/sta_MB_한국민.png',
+                position: {
+                    name:"미들 블로커",
+                    img:"./assets/icon/middle-blocker.svg",
+                },
+                team: { name: "의정부 KB손해보험 스타즈" }
+            },
+            {
+                id:109,
+                name: "정민수",
+                img: './assets/players/stars/sta_L_정민수.png',
+                position: {
+                    name:"리베로",
+                    img:"./assets/icon/libero.svg",
+                },
+                team: { name: "의정부 KB손해보험 스타즈" }
+            },
+            {
+                id:110,
+                name: "성한희",
+                img: './assets/players/stars/sta_L_성한희.png',
+                position: {
+                    name:"리베로",
+                    img:"./assets/icon/libero.svg",
+                },
+                team: { name: "의정부 KB손해보험 스타즈" }
+            },
 
         ],
     }),
