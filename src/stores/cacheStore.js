@@ -852,6 +852,187 @@ export const useCacheStore = defineStore('cacheStore', {
                 },
                 team: { name: "서울 우리카드 우리WON" }
             },
+            // 안산 OK저축은행 읏맨
+            {
+                id:78,
+                name: "신호진",
+                img: './assets/players/okman/okm_OP_신호진.png',
+                position: {
+                    name:"아포짓 스파이커",
+                    img:"./assets/icon/opposite-spiker.svg",
+                },
+                team: { name: "안산 OK저축은행 읏맨" }
+            },
+            {
+                id:79,
+                name: "김웅비",
+                img: './assets/players/okman/okm_OH_김웅비.png',
+                position: {
+                    name:"아웃사이드 히터",
+                    img:"./assets/icon/outside-hitter.svg",
+                },
+                team: { name: "안산 OK저축은행 읏맨" }
+            },
+            {
+                id:80,
+                name: "김건우",
+                img: './assets/players/okman/okm_OH_김건우.png',
+                position: {
+                    name:"아웃사이드 히터",
+                    img:"./assets/icon/outside-hitter.svg",
+                },
+                team: { name: "안산 OK저축은행 읏맨" }
+            },
+            {
+                id:81,
+                name: "신장호",
+                img: './assets/players/okman/okm_OH_신장호.png',
+                position: {
+                    name:"아웃사이드 히터",
+                    img:"./assets/icon/outside-hitter.svg",
+                },
+                team: { name: "안산 OK저축은행 읏맨" }
+            },
+            {
+                id:82,
+                name: "차지환",
+                img: './assets/players/okman/okm_OH_차지환.png',
+                position: {
+                    name:"아웃사이드 히터",
+                    img:"./assets/icon/outside-hitter.svg",
+                },
+                team: { name: "안산 OK저축은행 읏맨" }
+            },
+            {
+                id:83,
+                name: "박성진",
+                img: './assets/players/okman/okm_OH_박성진.png',
+                position: {
+                    name:"아웃사이드 히터",
+                    img:"./assets/icon/outside-hitter.svg",
+                },
+                team: { name: "안산 OK저축은행 읏맨" }
+            },
+            {
+                id:84,
+                name: "송희채",
+                img: './assets/players/okman/okm_OH_송희채.png',
+                position: {
+                    name:"아웃사이드 히터",
+                    img:"./assets/icon/outside-hitter.svg",
+                },
+                team: { name: "안산 OK저축은행 읏맨" }
+            },
+            {
+                id:85,
+                name: "정진혁",
+                img: './assets/players/okman/okm_S_정진혁.png',
+                position: {
+                    name:"세터",
+                    img:"./assets/icon/setter.svg",
+                },
+                team: { name: "안산 OK저축은행 읏맨" }
+            },
+            {
+                id:86,
+                name: "박태성",
+                img: './assets/players/okman/okm_S_박태성.png',
+                position: {
+                    name:"세터",
+                    img:"./assets/icon/setter.svg",
+                },
+                team: { name: "안산 OK저축은행 읏맨" }
+            },
+            {
+                id:87,
+                name: "이민규",
+                img: './assets/players/okman/okm_S_이민규.png',
+                position: {
+                    name:"세터",
+                    img:"./assets/icon/setter.svg",
+                },
+                team: { name: "안산 OK저축은행 읏맨" }
+            },
+            {
+                id:88,
+                name: "강정민",
+                img: './assets/players/okman/okm_S_강정민.png',
+                position: {
+                    name:"세터",
+                    img:"./assets/icon/setter.svg",
+                },
+                team: { name: "안산 OK저축은행 읏맨" }
+            },
+            {
+                id:89,
+                name: "박원빈",
+                img: './assets/players/okman/okm_MB_박원빈.png',
+                position: {
+                    name:"미들 블로커",
+                    img:"./assets/icon/middle-blocker.svg",
+                },
+                team: { name: "안산 OK저축은행 읏맨" }
+            },
+            {
+                id:90,
+                name: "진상헌",
+                img: './assets/players/okman/okm_MB_진상헌.png',
+                position: {
+                    name:"미들 블로커",
+                    img:"./assets/icon/middle-blocker.svg",
+                },
+                team: { name: "안산 OK저축은행 읏맨" }
+            },
+            {
+                id:91,
+                name: "박찬성",
+                img: './assets/players/okman/okm_MB_박찬성.png',
+                position: {
+                    name:"미들 블로커",
+                    img:"./assets/icon/middle-blocker.svg",
+                },
+                team: { name: "안산 OK저축은행 읏맨" }
+            },
+            {
+                id:92,
+                name: "진성태",
+                img: './assets/players/okman/okm_MB_진성태.png',
+                position: {
+                    name:"미들 블로커",
+                    img:"./assets/icon/middle-blocker.svg",
+                },
+                team: { name: "안산 OK저축은행 읏맨" }
+            },
+            {
+                id:93,
+                name: "정성현",
+                img: './assets/players/okman/okm_L_정성현.png',
+                position: {
+                    name:"리베로",
+                    img:"./assets/icon/libero.svg",
+                },
+                team: { name: "안산 OK저축은행 읏맨" }
+            },
+            {
+                id:94,
+                name: "부용찬",
+                img: './assets/players/okman/okm_L_부용찬.png',
+                position: {
+                    name:"리베로",
+                    img:"./assets/icon/libero.svg",
+                },
+                team: { name: "안산 OK저축은행 읏맨" }
+            },
+            {
+                id:95,
+                name: "이재서",
+                img: './assets/players/okman/okm_L_이재서.png',
+                position: {
+                    name:"리베로",
+                    img:"./assets/icon/libero.svg",
+                },
+                team: { name: "안산 OK저축은행 읏맨" }
+            },
 
         ],
     }),
