@@ -6,6 +6,7 @@ import TeamBuildPage from './pages/TeamBuildPage.vue'
 import TeamLookupPage from './pages/TeamLookupPage.vue'
 import MyPage from './pages/MyPage.vue'
 import RankingPage from './pages/RankingPage.vue'
+import AdminPage from './pages/AdminPage.vue'
 
 
 const router = createRouter({
@@ -17,6 +18,8 @@ const router = createRouter({
         { path: "/look", name:'look', component: TeamLookupPage},
         { path: "/my", name:'my', component: MyPage},
         { path: "/rank", name:'rank', component: RankingPage},
+
+        { path: "/admin/admin", name:'admin', component: AdminPage},
     ]
 });
 

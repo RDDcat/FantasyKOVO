@@ -1,0 +1,169 @@
+<template>
+<div class="admin-page">
+    <h1 class="">판타지 리그 서비스 등록</h1>
+    <h3 class="text-gray-600">새로고침하면 데이터 날라감</h3>
+    
+    <!-- Step 1: Register Service -->
+    <div v-if="currentStep === 1">
+        <h2>Step 1: 서비스 이름</h2>
+        <input v-model="serviceName" placeholder="서비스 이름">
+        <button @click="registerService">서비스 저장하기</button>
+    </div>
+
+    <!-- Step 2: Register Player Positions -->
+    <div v-if="currentStep === 2">
+        <h2>Step 2: 선수 포지션 종류 등록하기</h2>
+        <input v-model="positionName" placeholder="포지션 이름">
+        <button @click="addPosition">포지션 추가</button>
+        <ul>
+            <li v-for="(position, index) in positions" :key="index">
+            {{ position }}
+            </li>
+        </ul>
+        <button @click="registerPositions">포지션 저장하기</button>
+    </div>
+
+    <!-- Step 3: Register Player Metrics -->
+    <div v-if="currentStep === 3">
+        <h2>Step 3: 지표 등록하기</h2>
+        <input v-model="metricName" placeholder="지표 이름">
+        <input v-model="metricScore" type="number" placeholder="Score">
+        <button @click="addMetric">지표 추가</button>
+        <ul>
+            <li v-for="(metric, index) in metrics" :key="index">
+            {{ metric.name }}: {{ metric.score }}
+            </li>
+        </ul>
+        <button @click="registerMetrics">지표 저장하기</button>
+    </div>
+
+    <!-- Step 4: Register Teams -->
+    <div v-if="currentStep === 4">
+        <h2>Step 4: 클럽 등록하기</h2>
+        <input v-model="teamName" placeholder="팀이름">
+        <button @click="addTeam">Add Team</button>
+        <ul>
+            <li v-for="(team, index) in teams" :key="index">
+            {{ team }}
+            </li>
+        </ul>
+        <button @click="registerTeams">클럽 저장하기</button>
+    </div>
+
+    <!-- Completion Message -->
+    <div v-if="currentStep === 5">
+        <h2>모든 등록이 완료되었습니다!</h2>
+        <p></p>
+    </div>
+</div>
+</template>
+
+<script>
+import axios from 'axios';
+
+export default {
+data() {
+    return {
+        currentStep: 1,
+        serviceName: '',
+        productId: null,
+        positionName: '',
+        positions: [],
+        metricName: '',
+        metricScore: 0,
+        metrics: [],
+        teamName: '',
+        teams: [],
+    };
+    },
+    methods: {
+        async registerService() {
+            try {
+                const response = await axios.post('/api/register-service', { name: this.serviceName });
+                this.productId = response.data.productId;
+                this.currentStep = 2;
+            } catch (error) {
+                console.error('Error registering service:', error);
+            }
+                this.currentStep = 2;
+        },
+        addPosition() {
+            if (this.positionName) {
+                this.positions.push(this.positionName);
+                this.positionName = '';
+            }
+        },
+        async registerPositions() {
+            try {
+                await axios.post('/api/register-positions', {
+                productId: this.productId,
+                positions: this.positions
+                });
+                this.currentStep = 3;
+            } catch (error) {
+                console.error('Error registering positions:', error);
+            }
+            this.currentStep = 3;
+        },
+        addMetric() {
+            if (this.metricName && this.metricScore) {
+                this.metrics.push({ name: this.metricName, score: this.metricScore });
+                this.metricName = '';
+                this.metricScore = 0;
+            }
+        },
+        async registerMetrics() {
+            try {
+                await axios.post('/api/register-metrics', {
+                productId: this.productId,
+                metrics: this.metrics
+                });
+                this.currentStep = 4;
+            } catch (error) {
+                console.error('Error registering metrics:', error);
+            }
+                this.currentStep = 4;
+        },
+        addTeam() {
+            if (this.teamName) {
+                this.teams.push(this.teamName);
+                this.teamName = '';
+            }
+        },
+        async registerTeams() {
+            try {
+                await axios.post('/api/register-teams', {
+                productId: this.productId,
+                teams: this.teams
+                });
+                this.currentStep = 5;
+            } catch (error) {
+                console.error('Error registering teams:', error);
+            }
+                this.currentStep = 5;
+        },
+    },
+};
+</script>
+
+<style scoped>
+.admin-page {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+input, button {
+    margin: 10px 0;
+    padding: 5px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin: 5px 0;
+}
+</style>
