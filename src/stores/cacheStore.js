@@ -523,7 +523,7 @@ export const useCacheStore = defineStore('cacheStore', {
             {
                 id:45,
                 name: "박경민",
-                img: './assets/players/skywalkers/sky_R_박경민.png',
+                img: './assets/players/skywalkers/sky_L_박경민.png',
                 position: {
                     name:"리베로",
                     img:"./assets/icon/libero.svg",
@@ -533,7 +533,7 @@ export const useCacheStore = defineStore('cacheStore', {
             {
                 id:46,
                 name: "오은렬",
-                img: './assets/players/skywalkers/sky_R_오은렬.png',
+                img: './assets/players/skywalkers/sky_L_오은렬.png',
                 position: {
                     name:"리베로",
                     img:"./assets/icon/libero.svg",
@@ -544,7 +544,7 @@ export const useCacheStore = defineStore('cacheStore', {
             {
                 id:47,
                 name: "김동영",
-                img: './assets/players/skywalkers/sky_OP_김동영.png',
+                img: './assets/players/vixtorm/vix_OP_김동영.png',
                 position: {
                     name:"아포짓 스파이커",
                     img:"./assets/icon/opposite-spiker.svg",
@@ -554,7 +554,7 @@ export const useCacheStore = defineStore('cacheStore', {
             {
                 id:48,
                 name: "이태호",
-                img: './assets/players/skywalkers/sky_OP_이태호.png',
+                img: './assets/players/vixtorm/vix_OP_이태호.png',
                 position: {
                     name:"아포짓 스파이커",
                     img:"./assets/icon/opposite-spiker.svg",
@@ -564,7 +564,7 @@ export const useCacheStore = defineStore('cacheStore', {
             {
                 id:49,
                 name: "서재덕",
-                img: './assets/players/skywalkers/sky_OH_서재덕.png',
+                img: './assets/players/vixtorm/vix_OH_서재덕.png',
                 position: {
                     name:"아웃사이드 히터",
                     img:"./assets/icon/outside-hitter.svg",
@@ -574,7 +574,7 @@ export const useCacheStore = defineStore('cacheStore', {
             {
                 id:50,
                 name: "구교혁",
-                img: './assets/players/skywalkers/sky_OH_구교혁.png',
+                img: './assets/players/vixtorm/vix_OH_구교혁.png',
                 position: {
                     name:"아웃사이드 히터",
                     img:"./assets/icon/outside-hitter.svg",
@@ -584,7 +584,7 @@ export const useCacheStore = defineStore('cacheStore', {
             {
                 id:51,
                 name: "신성호",
-                img: './assets/players/skywalkers/sky_OH_신성호.png',
+                img: './assets/players/vixtorm/vix_OH_신성호.png',
                 position: {
                     name:"아웃사이드 히터",
                     img:"./assets/icon/outside-hitter.svg",
@@ -594,7 +594,7 @@ export const useCacheStore = defineStore('cacheStore', {
             {
                 id:52,
                 name: "박승수",
-                img: './assets/players/skywalkers/sky_OH_박승수.png',
+                img: './assets/players/vixtorm/vix_OH_박승수.png',
                 position: {
                     name:"아웃사이드 히터",
                     img:"./assets/icon/outside-hitter.svg",
@@ -604,7 +604,7 @@ export const useCacheStore = defineStore('cacheStore', {
             {
                 id:53,
                 name: "임성진",
-                img: './assets/players/skywalkers/sky_OH_임성진.png',
+                img: './assets/players/vixtorm/vix_OH_임성진.png',
                 position: {
                     name:"아웃사이드 히터",
                     img:"./assets/icon/outside-hitter.svg",
@@ -614,7 +614,7 @@ export const useCacheStore = defineStore('cacheStore', {
             {
                 id:54,
                 name: "강우석",
-                img: './assets/players/skywalkers/sky_OH_강우석.png',
+                img: './assets/players/vixtorm/vix_OH_강우석.png',
                 position: {
                     name:"아웃사이드 히터",
                     img:"./assets/icon/outside-hitter.svg",
@@ -624,7 +624,7 @@ export const useCacheStore = defineStore('cacheStore', {
             {
                 id:55,
                 name: "김건희",
-                img: './assets/players/skywalkers/sky_OH_김건희.png',
+                img: './assets/players/vixtorm/vix_OH_김건희.png',
                 position: {
                     name:"아웃사이드 히터",
                     img:"./assets/icon/outside-hitter.svg",
@@ -634,7 +634,7 @@ export const useCacheStore = defineStore('cacheStore', {
             {
                 id:56,
                 name: "김주영",
-                img: './assets/players/skywalkers/sky_S_김주영.png',
+                img: './assets/players/vixtorm/vix_S_김주영.png',
                 position: {
                     name:"세터",
                     img:"./assets/icon/setter.svg",
@@ -644,7 +644,7 @@ export const useCacheStore = defineStore('cacheStore', {
             {
                 id:57,
                 name: "이원중",
-                img: './assets/players/skywalkers/sky_S_이원중.png',
+                img: './assets/players/vixtorm/vix_S_이원중.png',
                 position: {
                     name:"세터",
                     img:"./assets/icon/setter.svg",
@@ -654,7 +654,7 @@ export const useCacheStore = defineStore('cacheStore', {
             {
                 id:58,
                 name: "조근호",
-                img: './assets/players/skywalkers/sky_MB_조근호.png',
+                img: './assets/players/vixtorm/vix_MB_조근호.png',
                 position: {
                     name:"미들 블로커",
                     img:"./assets/icon/middle-blocker.svg",
@@ -664,7 +664,7 @@ export const useCacheStore = defineStore('cacheStore', {
             {
                 id:59,
                 name: "전진선",
-                img: './assets/players/skywalkers/sky_MB_전진선.png',
+                img: './assets/players/vixtorm/vix_MB_전진선.png',
                 position: {
                     name:"미들 블로커",
                     img:"./assets/icon/middle-blocker.svg",
@@ -674,7 +674,7 @@ export const useCacheStore = defineStore('cacheStore', {
             {
                 id:60,
                 name: "정성환",
-                img: './assets/players/skywalkers/sky_MB_정성환.png',
+                img: './assets/players/vixtorm/vix_MB_정성환.png',
                 position: {
                     name:"미들 블로커",
                     img:"./assets/icon/middle-blocker.svg",
@@ -684,7 +684,7 @@ export const useCacheStore = defineStore('cacheStore', {
             {
                 id:61,
                 name: "신영석",
-                img: './assets/players/skywalkers/sky_MB_신영석.png',
+                img: './assets/players/vixtorm/vix_MB_신영석.png',
                 position: {
                     name:"미들 블로커",
                     img:"./assets/icon/middle-blocker.svg",
@@ -694,14 +694,165 @@ export const useCacheStore = defineStore('cacheStore', {
             {
                 id:62,
                 name: "이지석",
-                img: './assets/players/skywalkers/sky_L_이지석.png',
+                img: './assets/players/vixtorm/vix_L_이지석.png',
                 position: {
                     name:"리베로",
                     img:"./assets/icon/libero.svg",
                 },
                 team: { name: "수원 한국전력 VIXTORM" }
             },
-            // 
+            // 서울 우리카드 우리WON
+            {
+                id:63,
+                name: "이강원",
+                img: './assets/players/wooricard/won_OP_이강원.png',
+                position: {
+                    name:"아포짓 스파이커",
+                    img:"./assets/icon/opposite-spiker.svg",
+                },
+                team: { name: "서울 우리카드 우리WON" }
+            },
+            {
+                id:64,
+                name: "한성정",
+                img: './assets/players/wooricard/won_OH_한성정.png',
+                position: {
+                    name:"아웃사이드 히터",
+                    img:"./assets/icon/outside-hitter.svg",
+                },
+                team: { name: "서울 우리카드 우리WON" }
+            },
+            {
+                id:65,
+                name: "김동민",
+                img: './assets/players/wooricard/won_OH_김동민.png',
+                position: {
+                    name:"아웃사이드 히터",
+                    img:"./assets/icon/outside-hitter.svg",
+                },
+                team: { name: "서울 우리카드 우리WON" }
+            },
+            {
+                id:66,
+                name: "김형근",
+                img: './assets/players/wooricard/won_OH_김형근.png',
+                position: {
+                    name:"아웃사이드 히터",
+                    img:"./assets/icon/outside-hitter.svg",
+                },
+                team: { name: "서울 우리카드 우리WON" }
+            },
+            {
+                id:67,
+                name: "송명근",
+                img: './assets/players/wooricard/won_OH_송명근.png',
+                position: {
+                    name:"아웃사이드 히터",
+                    img:"./assets/icon/outside-hitter.svg",
+                },
+                team: { name: "서울 우리카드 우리WON" }
+            },
+            {
+                id:68,
+                name: "김지한",
+                img: './assets/players/wooricard/won_OH_김지한.png',
+                position: {
+                    name:"아웃사이드 히터",
+                    img:"./assets/icon/outside-hitter.svg",
+                },
+                team: { name: "서울 우리카드 우리WON" }
+            },
+            {
+                id:69,
+                name: "한태준",
+                img: './assets/players/wooricard/won_S_한태준.png',
+                position: {
+                    name:"세터",
+                    img:"./assets/icon/setter.svg",
+                },
+                team: { name: "서울 우리카드 우리WON" }
+            },
+            {
+                id:70,
+                name: "김광일",
+                img: './assets/players/wooricard/won_S_김광일.png',
+                position: {
+                    name:"세터",
+                    img:"./assets/icon/setter.svg",
+                },
+                team: { name: "서울 우리카드 우리WON" }
+            },
+            {
+                id:71,
+                name: "이승원",
+                img: './assets/players/wooricard/won_S_이승원.png',
+                position: {
+                    name:"세터",
+                    img:"./assets/icon/setter.svg",
+                },
+                team: { name: "서울 우리카드 우리WON" }
+            },
+            {
+                id:72,
+                name: "박진우",
+                img: './assets/players/wooricard/won_MB_박진우.png',
+                position: {
+                    name:"미들 블로커",
+                    img:"./assets/icon/middle-blocker.svg",
+                },
+                team: { name: "서울 우리카드 우리WON" }
+            },
+            {
+                id:73,
+                name: "이상현",
+                img: './assets/players/wooricard/won_MB_이상현.png',
+                position: {
+                    name:"미들 블로커",
+                    img:"./assets/icon/middle-blocker.svg",
+                },
+                team: { name: "서울 우리카드 우리WON" }
+            },
+            {
+                id:74,
+                name: "박준혁",
+                img: './assets/players/wooricard/won_MB_박준혁.png',
+                position: {
+                    name:"미들 블로커",
+                    img:"./assets/icon/middle-blocker.svg",
+                },
+                team: { name: "서울 우리카드 우리WON" }
+            },
+            {
+                id:75,
+                name: "김완종",
+                img: './assets/players/wooricard/won_MB_김완종.png',
+                position: {
+                    name:"미들 블로커",
+                    img:"./assets/icon/middle-blocker.svg",
+                },
+                team: { name: "서울 우리카드 우리WON" }
+            },
+            {
+                id:76,
+                name: "오재성",
+                img: './assets/players/wooricard/won_L_오재성.png',
+                position: {
+                    name:"리베로",
+                    img:"./assets/icon/libero.svg",
+                },
+                team: { name: "서울 우리카드 우리WON" }
+            },
+            {
+                id:77,
+                name: "김영준",
+                img: './assets/players/wooricard/won_L_김영준.png',
+                position: {
+                    name:"리베로",
+                    img:"./assets/icon/libero.svg",
+                },
+                team: { name: "서울 우리카드 우리WON" }
+            },
+
         ],
     }),
 })
