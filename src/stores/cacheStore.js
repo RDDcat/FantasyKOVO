@@ -540,6 +540,168 @@ export const useCacheStore = defineStore('cacheStore', {
                 },
                 team: { name: "천안 현대캐피탈 스카이워커스" }
             },
+            // 수원 한국전력 VIXTORM
+            {
+                id:47,
+                name: "김동영",
+                img: './assets/players/skywalkers/sky_OP_김동영.png',
+                position: {
+                    name:"아포짓 스파이커",
+                    img:"./assets/icon/opposite-spiker.svg",
+                },
+                team: { name: "수원 한국전력 VIXTORM" }
+            },
+            {
+                id:48,
+                name: "이태호",
+                img: './assets/players/skywalkers/sky_OP_이태호.png',
+                position: {
+                    name:"아포짓 스파이커",
+                    img:"./assets/icon/opposite-spiker.svg",
+                },
+                team: { name: "수원 한국전력 VIXTORM" }
+            },
+            {
+                id:49,
+                name: "서재덕",
+                img: './assets/players/skywalkers/sky_OH_서재덕.png',
+                position: {
+                    name:"아웃사이드 히터",
+                    img:"./assets/icon/outside-hitter.svg",
+                },
+                team: { name: "수원 한국전력 VIXTORM" }
+            },
+            {
+                id:50,
+                name: "구교혁",
+                img: './assets/players/skywalkers/sky_OH_구교혁.png',
+                position: {
+                    name:"아웃사이드 히터",
+                    img:"./assets/icon/outside-hitter.svg",
+                },
+                team: { name: "수원 한국전력 VIXTORM" }
+            },
+            {
+                id:51,
+                name: "신성호",
+                img: './assets/players/skywalkers/sky_OH_신성호.png',
+                position: {
+                    name:"아웃사이드 히터",
+                    img:"./assets/icon/outside-hitter.svg",
+                },
+                team: { name: "수원 한국전력 VIXTORM" }
+            },
+            {
+                id:52,
+                name: "박승수",
+                img: './assets/players/skywalkers/sky_OH_박승수.png',
+                position: {
+                    name:"아웃사이드 히터",
+                    img:"./assets/icon/outside-hitter.svg",
+                },
+                team: { name: "수원 한국전력 VIXTORM" }
+            },
+            {
+                id:53,
+                name: "임성진",
+                img: './assets/players/skywalkers/sky_OH_임성진.png',
+                position: {
+                    name:"아웃사이드 히터",
+                    img:"./assets/icon/outside-hitter.svg",
+                },
+                team: { name: "수원 한국전력 VIXTORM" }
+            },
+            {
+                id:54,
+                name: "강우석",
+                img: './assets/players/skywalkers/sky_OH_강우석.png',
+                position: {
+                    name:"아웃사이드 히터",
+                    img:"./assets/icon/outside-hitter.svg",
+                },
+                team: { name: "수원 한국전력 VIXTORM" }
+            },
+            {
+                id:55,
+                name: "김건희",
+                img: './assets/players/skywalkers/sky_OH_김건희.png',
+                position: {
+                    name:"아웃사이드 히터",
+                    img:"./assets/icon/outside-hitter.svg",
+                },
+                team: { name: "수원 한국전력 VIXTORM" }
+            },
+            {
+                id:56,
+                name: "김주영",
+                img: './assets/players/skywalkers/sky_S_김주영.png',
+                position: {
+                    name:"세터",
+                    img:"./assets/icon/setter.svg",
+                },
+                team: { name: "수원 한국전력 VIXTORM" }
+            },
+            {
+                id:57,
+                name: "이원중",
+                img: './assets/players/skywalkers/sky_S_이원중.png',
+                position: {
+                    name:"세터",
+                    img:"./assets/icon/setter.svg",
+                },
+                team: { name: "수원 한국전력 VIXTORM" }
+            },
+            {
+                id:58,
+                name: "조근호",
+                img: './assets/players/skywalkers/sky_MB_조근호.png',
+                position: {
+                    name:"미들 블로커",
+                    img:"./assets/icon/middle-blocker.svg",
+                },
+                team: { name: "수원 한국전력 VIXTORM" }
+            },
+            {
+                id:59,
+                name: "전진선",
+                img: './assets/players/skywalkers/sky_MB_전진선.png',
+                position: {
+                    name:"미들 블로커",
+                    img:"./assets/icon/middle-blocker.svg",
+                },
+                team: { name: "수원 한국전력 VIXTORM" }
+            },
+            {
+                id:60,
+                name: "정성환",
+                img: './assets/players/skywalkers/sky_MB_정성환.png',
+                position: {
+                    name:"미들 블로커",
+                    img:"./assets/icon/middle-blocker.svg",
+                },
+                team: { name: "수원 한국전력 VIXTORM" }
+            },
+            {
+                id:61,
+                name: "신영석",
+                img: './assets/players/skywalkers/sky_MB_신영석.png',
+                position: {
+                    name:"미들 블로커",
+                    img:"./assets/icon/middle-blocker.svg",
+                },
+                team: { name: "수원 한국전력 VIXTORM" }
+            },
+            {
+                id:62,
+                name: "이지석",
+                img: './assets/players/skywalkers/sky_L_이지석.png',
+                position: {
+                    name:"리베로",
+                    img:"./assets/icon/libero.svg",
+                },
+                team: { name: "수원 한국전력 VIXTORM" }
+            },
+            // 
         ],
     }),
 })
