@@ -35,7 +35,7 @@
     <!-- 홍보 카드 섹션 -->
     <div class="grid grid-cols-1 desktop:grid-cols-2 gap-6 mb-12">
         <!-- Leagues 카드 -->
-        <div class="bg-gradient-to-r from-violet-500 to-blue-600 rounded-lg shadow-lg p-6 text-white">
+        <div class="bg-gradient-to-r from-green-500 to-blue-600 rounded-lg shadow-lg p-6 text-white">
             <h2 class="text-2xl font-bold mb-4">최고의 배잘알을 가려라!</h2>
             <p class="mb-4">다른 유저와 경쟁하여 최고가 되어보세요!</p>
             <div class="flex w-full">
@@ -55,7 +55,7 @@
 
     <!-- 선수 카드 섹션 -->
     <h2 class="text-3xl font-bold mb-6 text-center">Most Picked!</h2>
-    <div class="grid grid-cols-4 mobile:grid-cols-2 gap-4">
+    <div class="grid grid-cols-4 mobile:grid-cols-2 gap-4 pb-8">
         <!-- 김연경 카드 -->
         <div class="bg-white rounded-lg shadow-md overflow-hidden">
             <img :src="isHoveredEgg ? hoverImage1 : defaultImage1" 
@@ -107,8 +107,8 @@
                 <p class="text-gray-600 text-sm">점보스</p>
             </div>
         </div>
-        
     </div>
+
 </div>
 </div>
 </template>
@@ -120,7 +120,7 @@ import {usePersistStore} from '@/stores/persistStore'
 
 export default {
     components: {
-        
+
     },
     setup() {
         const cacheStore = useCacheStore()
