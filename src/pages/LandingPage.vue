@@ -4,24 +4,58 @@
     <div class="container mx-auto px-4 py-8">
     <!-- 클릭 배너 -->
     <div class="relative mb-8 cursor-pointer overflow-hidden" @click="goBuild()" @mouseenter="isHovered = true" @mouseleave="isHovered = false">
-        <img 
-            :class="['transition-all duration-300 w-full rounded-xl', { 'filter hue-rotate-180': isHovered }]"
-            src="@/assets/banner.jpg" 
-            alt=""
-        >
-        <!-- 글씨 컨테이너 -->
-        <div class="absolute top-1/2 transform -translate-y-1/2 z-10 overflow-hidden
-                    desktop:left-[40%]  desktop:text-4xl  
-                    mobile:right-4 mobile:text-lg ">
+        
+        <div class="relative w-full aspect-video rounded-xl bg-white">
             <transition name="slide-fade" mode="out-in">
-                <div 
+                <img v-if="isHovered"
+                    :class="['ml-auto mr-4 transition-all duration-75 rounded-xl w-44', { 'filter hue-rotate-180': isHovered }]"
+                    src='@/assets/knkorea-logo.png' 
+                    alt=""
+                >
+                <img v-else
+                    :class="['transition-all duration-75 rounded-xl ', { 'filter hue-rotate-180': isHovered }]"
+                    src='@/assets/banner.jpg'
+                    alt=""
+                >
+            </transition>
+            
+        
+            <div class="absolute top-[25%] right-[0] overflow-hidden">
+                <transition name="slide-fade">
+                    <img v-if="isHovered"
+                        :class="['transition-all duration-300 rounded-xl w-96', { 'opacity-100': isHovered, 'opacity-0': !isHovered }]"
+                        src='@/assets/cup.jpg' 
+                        alt=""
+                    >
+                </transition>
+            </div>
+        </div>
+        <!-- 글씨 컨테이너  -->
+        <div class="absolute top-1/2 transform -translate-y-1/2 z-10 overflow-hidden
+                    desktop:left-[40%]  desktop:text-4xl 
+                    mobile:right-4 mobile:text-lg ">
+            <transition name="slide-fade" mode="out-in" >
+                <div v-if="!isHovered"
                     :key="currentTextIndex" 
                     :class="['transition-all duration-300 font-bold', { 'text-blue-600': !isHovered, 'text-yellow-400': isHovered }]"
                 >
-                {{ texts[currentTextIndex] }}
-            </div>
+                    {{ texts[currentTextIndex] }}
+                </div>
             </transition>
         </div>
+        <!-- 글씨 컨테이너 호버-->
+        <div class="absolute top-1/2 transform -translate-y-1/2 z-10 overflow-hidden
+                    desktop:left-[10%]  desktop:text-4xl 
+                    mobile:left-4 mobile:text-lg ">
+            <transition name="slide-fade" mode="out-in" >
+                <div v-if="isHovered"
+                    :class="['flex transition-all duration-300 font-bold', { 'text-blue-600': !isHovered, 'text-yellow-500': isHovered }]"
+                    >
+                        2024 <div class="text-black">KEIEN</div>시즌 참가하기
+                </div>
+            </transition>
+        </div>
+
         <!-- 호버 시 나타나는 텍스트 -->
         <div 
             :class="['absolute bottom-4 left-1/2 transform -translate-x-1/2 text-sm text-gray-800 bg-white bg-opacity-75 px-2 py-1 rounded transition-opacity duration-300', 
