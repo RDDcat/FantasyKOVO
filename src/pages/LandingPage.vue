@@ -8,7 +8,7 @@
         <div class="relative w-full aspect-video rounded-xl bg-white">
             <transition name="slide-fade" mode="out-in">
                 <img v-if="isHovered"
-                    :class="['ml-auto mr-4 transition-all duration-75 rounded-xl w-44', { 'filter hue-rotate-180': isHovered }]"
+                    :class="['ml-auto mr-4 transition-all duration-75 rounded-xl w-44']"
                     src='@/assets/knkorea-logo.png' 
                     alt=""
                 >
@@ -139,6 +139,21 @@
                     <div class="my-auto text-xs">OH</div> 
                 </h3>
                 <p class="text-gray-600 text-sm">점보스</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 스폰서 섹션 -->
+    <h2 class="text-center mt-8 w-full flex">
+        <div class="flex mx-auto">
+            <div class="text-green-400">S</div>ponser
+        </div>
+    </h2>
+    <div class="flex  w-full">
+        <div class="my-4 mx-auto grid grid-cols-1 mobile:grid-cols-3 gap-4 pb-8">
+            <!-- 스폰서 -->
+            <div class="overflow-hidden w-36">
+                <img class="w-full object-cover rounded-xl" src="@/assets/knkorea-logo.png" alt="">
             </div>
         </div>
     </div>
