@@ -150,6 +150,7 @@
         </div>
     </h2>
     <div class="flex  w-full">
+        <!-- <div class="my-4 mx-auto grid grid-cols-6 mobile:grid-cols-3 gap-4 pb-8"> -->
         <div class="my-4 mx-auto grid grid-cols-1 mobile:grid-cols-3 gap-4 pb-8">
             <!-- 스폰서 -->
             <div class="overflow-hidden w-36">
