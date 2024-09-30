@@ -4,13 +4,31 @@
     <h1 class="text-3xl font-bold mb-6 text-center">2024 KEIEN 판타지 랭킹</h1>
 
     <!-- 사용자의 순위 -->
-    <div class="bg-blue-100 p-4 rounded-lg shadow mb-8 cursor-pointer" @click="$router.push({ name: 'my' });">
-        <h2 class="text-xl font-semibold mb-2">내 순위</h2>
-        <div class="flex flex-wrap justify-between items-center">
-            <span class="text-2xl font-bold">{{ userRank }}위</span>
-            <span class="text-lg">총점: {{ userScore }}점</span>
-            <span class="text-lg">팀명: {{ userTeamName }}</span>
+    <div class="relative h-[25rem] banner rounded-lg shadow mb-8 cursor-pointer" @click="$router.push({ name: 'my' });">
+        <div class="absolute right-0 p-12 text-right z-20">
+            <h2 class="text-xl ">순위</h2>
+            <span class="text-3xl font-bold">{{ userRank }}위</span>
+            <div class="flex flex-col flex-wrap ">
+                <span class="text-lg mt-2">총점</span>
+                <span class="text-xl">{{ userScore }}점</span>
+                <div class="flex">
+                    <div class="mt-2 ml-auto border-2 border-red-700 w-4 h-0.5"></div>
+                    <div class="mt-2 border-2 border-black w-12 h-0.5"></div>
+                </div>
+                <span class="text-lg mt-2">총점</span>
+                <span class="text-xl">{{ userScore }}점</span>
+                <div class="flex">
+                    <div class="mt-2 ml-auto border-2 border-red-700 w-8 h-0.5"></div>
+                    <div class="mt-2 border-2 border-black w-4 h-0.5"></div>
+                </div>
+            </div>
         </div>
+        <span class="absolute right-0 bottom-0 py-4 px-6 text-4xl text-white">{{ userTeamName }}</span>
+        <!-- <img class="absolute bottom-0 z-10 object-contain h-96 w-64"  src="@/assets/players/vixtorm/vix_OH_박승수.png" alt=""> -->
+        <img class="absolute bottom-0 z-10 object-contain h-96 w-64"  src="@/assets/sample.png" alt="">
+        <!-- <img class="absolute bottom-0 z-10 object-contain h-96 w-64"  src="@/assets/sample2.png" alt=""> -->
+        <!-- <img class="absolute bottom-0 z-10 object-contain h-96 w-64"  src="@/assets/players/vixtorm/vix_OH_박승수.png" alt=""> -->
+        <!-- <img class="absolute mobile:hidden  bottom-0 left-[15rem] object-contain h-64"  src="@/assets/sample2.png" alt=""> -->
     </div>
 
     <!-- 랭킹 리스트 -->
@@ -165,4 +183,8 @@ export default {
 
 <style scoped>
 /* 필요한 경우 추가 스타일 */
+.banner{
+    background: rgb(95,132,255);
+    background: linear-gradient(4deg, rgba(95,132,255,1) 0%, rgba(103,138,255,1) 40%, rgba(105,139,255,1) 61%, rgba(143,168,253,1) 100%);
+}
 </style>
