@@ -1,35 +1,39 @@
 <template>
 <!-- 랭킹 페이지 -->
 <div class="container mx-auto px-4 py-8">
-    <h1 class="text-3xl font-bold mb-6 text-center">2024 KEIGN 판타지 랭킹</h1>
+    <h1 class="text-3xl font-bold mb-6 text-center">2024 KEIEN 판타지 랭킹</h1>
 
     <!-- 사용자의 순위 -->
-    <div class="bg-blue-100 p-4 rounded-lg shadow mb-8" @click="$router.push({ name: 'my' });
-">
+    <div class="bg-blue-100 p-4 rounded-lg shadow mb-8 cursor-pointer" @click="$router.push({ name: 'my' });">
         <h2 class="text-xl font-semibold mb-2">내 순위</h2>
-        <div class="flex justify-between items-center">
+        <div class="flex flex-wrap justify-between items-center">
             <span class="text-2xl font-bold">{{ userRank }}위</span>
             <span class="text-lg">총점: {{ userScore }}점</span>
             <span class="text-lg">팀명: {{ userTeamName }}</span>
         </div>
     </div>
 
-    <!-- 랭킹 테이블 -->
+    <!-- 랭킹 리스트 -->
     <div class="bg-white rounded-lg shadow overflow-hidden">
-        <table class="w-full">
+        <!-- 데스크톱 뷰 -->
+        <table class="w-full hidden lg:table">
             <thead class="bg-gray-200">
                 <tr>
                     <th class="px-4 py-2 text-left">순위</th>
+                    <th class="px-4 py-2 text-left">프로필</th>
                     <th class="px-4 py-2 text-left">팀명</th>
-                    <th class="px-4 py-2 text-left">감독명</th>
+                    <th class="px-4 py-2 text-left">유저</th>
                     <th class="px-4 py-2 text-left">총점</th>
-                    <th class="px-4 py-2 text-left">지난 주 순위</th>
+                    <th class="px-4 py-2 text-left">순위 변동</th>
                 </tr>
             </thead>
             <tbody>
                 <tr v-for="(user, index) in rankings" :key="user.id" 
                     :class="{'bg-yellow-100': user.id === currentUserId}">
                     <td class="px-4 py-2">{{ index + 1 }}</td>
+                    <td class="px-4 py-2">
+                        <img :src="user.profilePicture" alt="프로필 사진" class="w-10 h-10 rounded-full">
+                    </td>
                     <td class="px-4 py-2">{{ user.teamName }}</td>
                     <td class="px-4 py-2">{{ user.managerName }}</td>
                     <td class="px-4 py-2">{{ user.totalScore }}</td>
@@ -41,6 +45,29 @@
                 </tr>
             </tbody>
         </table>
+
+        <!-- 모바일 뷰 -->
+        <div class="lg:hidden">
+            <div v-for="(user, index) in rankings" :key="user.id" 
+                class="p-4 border-b" :class="{'bg-yellow-100': user.id === currentUserId}">
+                <div class="flex items-center mb-2">
+                    <img :src="user.profilePicture" alt="프로필 사진" class="w-10 h-10 rounded-full mr-4">
+                    <div>
+                        <div class="font-bold">{{ user.teamName }}</div>
+                        <div class="text-sm text-gray-600">{{ user.managerName }}</div>
+                    </div>
+                </div>
+                <div class="flex justify-between items-center">
+                    <span class="font-bold">{{ index + 1 }}위</span>
+                    <span>총점: {{ user.totalScore }}점</span>
+                    <span>
+                        <span v-if="user.lastWeekRank < index + 1" class="text-red-500">↓ {{ user.lastWeekRank }}</span>
+                        <span v-else-if="user.lastWeekRank > index + 1" class="text-green-500">↑ {{ user.lastWeekRank }}</span>
+                        <span v-else>- {{ user.lastWeekRank }}</span>
+                    </span>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- 페이지네이션 -->
@@ -67,7 +94,7 @@ export default {
         const rankings = ref([])
         const currentPage = ref(1)
         const itemsPerPage = 20
-        const currentUserId = ref(null) // 실제 구현 시 로그인한 사용자의 ID로 설정
+        const currentUserId = ref(null)
 
         const userRank = ref(0)
         const userScore = ref(0)
@@ -75,22 +102,25 @@ export default {
 
         const totalPages = computed(() => Math.ceil(rankings.value.length / itemsPerPage))
 
+        // 팀 이름과 감독 이름을 위한 배열
+        const teamNameWords = ['용감한', '강력한', '빛나는', '신비한', '우아한', '열정적인', '현명한', '행운의', '화려한', '위대한']
+        const managerNameWords = ['호랑이', '독수리', '사자', '늑대', '표범', '코끼리', '곰', '여우', '매', '펭귄']
+
+        const getRandomName = (arr) => arr[Math.floor(Math.random() * arr.length)]
+
         const fetchRankings = () => {
-            // 실제 구현 시 API를 통해 랭킹 데이터를 가져와야 합니다.
-            // 여기서는 예시 데이터를 사용합니다.
             rankings.value = Array.from({ length: 100 }, (_, i) => ({
                 id: i + 1,
-                teamName: `팀 ${i + 1}`,
-                managerName: `감독 ${i + 1}`,
+                teamName: `${getRandomName(teamNameWords)}${getRandomName(managerNameWords)}`,
+                managerName: `${getRandomName(teamNameWords)}${getRandomName(managerNameWords)}`,
                 totalScore: Math.floor(Math.random() * 1000),
-                lastWeekRank: Math.floor(Math.random() * 100) + 1
+                lastWeekRank: Math.floor(Math.random() * 100) + 1,
+                profilePicture: `./assets/logo-beta.svg` // 플레이스홀더 이미지 사용
             }))
 
-            // 점수 기준으로 정렬
             rankings.value.sort((a, b) => b.totalScore - a.totalScore)
 
-            // 현재 사용자의 정보 설정 (예시)
-            currentUserId.value = 42 // 실제 구현 시 로그인한 사용자의 ID로 설정
+            currentUserId.value = 42
             const currentUser = rankings.value.find(user => user.id === currentUserId.value)
             if (currentUser) {
                 userRank.value = rankings.value.findIndex(user => user.id === currentUserId.value) + 1
