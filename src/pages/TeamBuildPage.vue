@@ -4,9 +4,9 @@
     <!-- 팀이 들어갈 수 있는 지도 -->
     <div class="relative mx-auto desktop:w-[800px] mb-12">
         <!-- 지도 -->
-        <img class="aspect-square 
+        <img class="aspect-square object-cover
             mobile:w-full 
-            desktop:w-[800px] z-0" src="@/assets/court.png" alt="">
+            desktop:w-[800px] z-0" src="@/assets/stadium.jpg" alt="">
         <!-- 포지션 -->
         <div v-for="(position, index) in positions" :key="index"
             class="absolute z-10 rounded-full bg-white ring-4 ring-gray-800 hover:bg-gray-600"
@@ -68,9 +68,9 @@ export default {
         const selectedPlayers = ref([null, null, null, null, null, null])
 
         const positions = [
-            { class: 'mobile:top-16 mobile:left-[22%] mobile:w-12 mobile:h-12 desktop:top-32 desktop:left-[22%] desktop:w-24 desktop:h-24' },
-            { class: 'mobile:top-16 mobile:left-[45%] mobile:w-12 mobile:h-12 desktop:top-32 desktop:left-[45%] desktop:w-24 desktop:h-24' },
-            { class: 'mobile:top-16 mobile:left-[68%] mobile:w-12 mobile:h-12 desktop:top-32 desktop:left-[68%] desktop:w-24 desktop:h-24' },
+            { class: 'mobile:top-32 mobile:left-[22%] mobile:w-12 mobile:h-12 desktop:top-56 desktop:left-[22%] desktop:w-24 desktop:h-24' },
+            { class: 'mobile:top-32 mobile:left-[45%] mobile:w-12 mobile:h-12 desktop:top-56 desktop:left-[45%] desktop:w-24 desktop:h-24' },
+            { class: 'mobile:top-32 mobile:left-[68%] mobile:w-12 mobile:h-12 desktop:top-56 desktop:left-[68%] desktop:w-24 desktop:h-24' },
             { class: 'mobile:top-60 mobile:left-[22%] mobile:w-12 mobile:h-12 desktop:top-[440px] desktop:left-[22%] desktop:w-24 desktop:h-24' },
             { class: 'mobile:top-60 mobile:left-[45%] mobile:w-12 mobile:h-12 desktop:top-[440px] desktop:left-[45%] desktop:w-24 desktop:h-24' },
             { class: 'mobile:top-60 mobile:left-[68%] mobile:w-12 mobile:h-12 desktop:top-[440px] desktop:left-[68%] desktop:w-24 desktop:h-24' },
