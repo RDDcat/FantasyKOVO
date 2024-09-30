@@ -146,7 +146,7 @@
     <!-- 스폰서 섹션 -->
     <h2 class="text-center mt-8 w-full flex">
         <div class="flex mx-auto">
-            <div class="text-green-400">S</div>ponser
+            <div class="text-yellow-400">S</div>ponser
         </div>
     </h2>
     <div class="flex  w-full">
