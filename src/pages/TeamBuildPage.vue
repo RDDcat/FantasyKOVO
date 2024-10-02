@@ -36,7 +36,7 @@
         </TransitionGroup>
     </div>
     <!-- 상단 섹션 스켈레톤 -->
-    <div class="h-[800px]" v-if="!showMap" ></div>
+    <div class="h-[800px]" v-if="!showMap"></div>
 
     <!-- 선수 리스트 -->
     <!-- 선수 카드 섹션 -->

@@ -3,23 +3,23 @@
 <div class="flex-col items-center">
     <h1 class="px-20 py-6 mobile:p-4 font-bold text-xl">내 선수단</h1>
     <div class="grid grid-cols-3 gap-4 p-20
-                mobile:grid-cols-3 mobile:p-4">
+                mobile:grid-cols-3 mobile:p-4 mobile:gap-2">
         <!-- 내 선수단 카드 -->
         <div v-for="player in cacheStore.myTeam.players" :key="player.id"
             class="relative bg-white rounded-lg shadow-md overflow-hidden">
             <img :src="player.img" 
                 class="w-full aspect-square object-cover"/>
-            <div class="p-4">
-                <h3 class="font-bold text-lg mb-2">{{player.name}}</h3>
-                <p class="flex text-gray-600">{{player.position.name}} <img class="w-4" :src="player.position.img" /></p>
-                <p class="text-gray-600">{{player.team.name}}</p>
+            <div class="p-2 text-base">
+                <h3 class="font-bold mb-1">{{player.name}}</h3>
+                <p class="flex mb-1 text-xs text-gray-600">{{player.position.name}} <img class="w-4" :src="player.position.img" /></p>
+                <p class="text-xs text-gray-600 break-words">{{player.team.name}}</p>
             </div>
         </div>
     </div>
 
     <!-- 선수 리스트 -->
     <!-- 관심 선수 카드 섹션 -->
-    <h2 class="text-3xl font-bold mb-6 text-center">내 관심선수</h2>
+    <h2 class="text-3xl font-bold my-6 text-center">내 관심선수</h2>
     <div class="grid grid-cols-4 gap-4 p-20
                 mobile:grid-cols-2 mobile:p-4 ">
         <!-- 선수 카드 -->
@@ -33,7 +33,7 @@
             </div>
             <div class="p-4">
                 <h3 class="font-bold text-lg mb-2">{{player.name}}</h3>
-                <p class="text-gray-600">{{player.position}}</p>
+                <p class="flex text-gray-600">{{player.position.name}} <img class="w-4" :src="player.position.img" /></p>
                 <p class="text-gray-600">{{player.team.name}}</p>
             </div>
         </div>

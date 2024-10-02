@@ -15,8 +15,8 @@
                     <div class="mt-2 ml-auto border-2 border-red-700 w-4 h-0.5"></div>
                     <div class="mt-2 border-2 border-black w-12 h-0.5"></div>
                 </div>
-                <span class="text-lg mt-2">총점</span>
-                <span class="text-xl">{{ userScore }}점</span>
+                <span class="text-lg mt-2">스텟</span>
+                <span class="text-xl">{{ userScore-50 }}점</span>
                 <div class="flex">
                     <div class="mt-2 ml-auto border-2 border-red-700 w-8 h-0.5"></div>
                     <div class="mt-2 border-2 border-black w-4 h-0.5"></div>
