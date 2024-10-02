@@ -144,7 +144,7 @@
     </div>
 
     <!-- 랭킹 & 뉴스 섹션 -->
-    <div class="grid desktop:grid-cols-3 mobile:grid-cols-1 gap-6 mb-16">
+    <div class="grid desktop:grid-cols-3 mobile:grid-cols-1 gap-6 mt-10 mb-20">
         <!-- 뉴스 섹션 -->
         <div class="desktop:col-span-2">
             <h2 class="text-xl font-bold mt-2 mb-4">News</h2>
