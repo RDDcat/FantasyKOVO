@@ -4,15 +4,24 @@
     <!-- 팀이 들어갈 수 있는 지도 -->
     <div class="relative mx-auto desktop:w-[800px] mb-12">
         <!-- 지도 -->
-        <img class="aspect-square object-cover
-            mobile:w-full 
-            desktop:w-[800px] z-0" src="@/assets/stadium.jpg" alt="">
+        <!-- 지도 -->
+        <TransitionGroup
+            name="blur-in"
+            tag="div"
+            appear>
+            <img v-if="showMap" 
+                key="map-image"
+                class="aspect-square object-cover
+                mobile:w-full 
+                desktop:w-[800px] z-0" 
+                src="@/assets/stadium.jpg" 
+                alt="">
+        </TransitionGroup>
         <!-- 포지션 -->
         <TransitionGroup
             name="fade-up"
             tag="div"
-            appear
-        >
+            appear>
             <template v-if="showPositions">
                 <div v-for="(position, index) in positions" :key="index"
                     class="position-item absolute z-10 rounded-full bg-white ring-4 ring-gray-800 hover:bg-gray-600"
@@ -76,6 +85,7 @@ export default {
         const displayedPlayers = ref([])
         const selectedPlayers = ref([null, null, null, null, null, null, null, null, null, null])
         const showPositions = ref(false)
+        const showMap = ref(false)
 
         const positions = [
             { class: 'mobile:top-32 mobile:left-[22%] mobile:w-12 mobile:h-12 desktop:top-56 desktop:left-[22%] desktop:w-24 desktop:h-24' },
@@ -116,8 +126,14 @@ export default {
 
         onMounted(() => {
             selectRandomPlayers()
-            // 컴포넌트가 마운트된 후 포지션을 표시
-            showPositions.value = true
+            // 지도 먼저 표시
+            setTimeout(() => {
+                showMap.value = true
+            }, 100)
+            // 그 다음 포지션 표시
+            setTimeout(() => {
+                showPositions.value = true
+            }, 600)
         })
 
         const toggleLikePlayer = (id) => {
@@ -157,6 +173,7 @@ export default {
             selectedPlayers,
             positions,
             showPositions,
+            showMap,
             isPlayerSelected,
             toggleLikePlayer,
             togglePlayerSelection,
@@ -169,6 +186,22 @@ export default {
 </script>
 
 <style scoped>
+.blur-in-enter-active,
+.blur-in-appear-active {
+    animation: blur-in 0.5s ease-out both;
+}
+
+@keyframes blur-in {
+    from {
+        opacity: 0;
+        filter: blur(20px);
+    }
+    to {
+        opacity: 1;
+        filter: blur(0);
+    }
+}
+
 .fade-up-enter-active,
 .fade-up-appear-active {
     animation: fade-up 0.5s ease-out both;
@@ -190,6 +223,6 @@ export default {
 }
 
 .position-item:hover {
-  background-color: #4B5563;  /* Tailwind's gray-600 */
+    background-color: #4B5563;
 }
 </style>
