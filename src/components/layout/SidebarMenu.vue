@@ -1,6 +1,6 @@
 <template>
 <!-- 메인 페이지 팀 등록 -->
-    <div  class="fixed right-0 top-0 w-4/5 h-full bg-black opacity-95 z-40">
+    <div  class="fixed right-0 top-0 w-4/5 h-full bg-black opacity-95 z-40 desktop:w-1/5">
         <!-- 메뉴 내용 -->
         <div class="text-white my-12 space-y-6 p-4 flex flex-col">
             <!-- 메뉴1 -->
