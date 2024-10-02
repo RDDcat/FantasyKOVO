@@ -143,6 +143,56 @@
         </div>
     </div>
 
+    <!-- 랭킹 & 뉴스 섹션 -->
+    <div class="grid desktop:grid-cols-3 mobile:grid-cols-1 gap-6 mb-16">
+        <!-- 뉴스 섹션 -->
+        <div class="desktop:col-span-2">
+            <h2 class="text-xl font-bold mt-2 mb-4">News</h2>
+            <div class="space-y-4">
+                <div v-for="news in newsItems" :key="news.id" 
+                    class="bg-white rounded-lg shadow-lg overflow-hidden
+                        desktop:flex mobile:block">
+                    <img :src="news.thumbnail" alt="News thumbnail" 
+                        class="desktop:w-1/3 mobile:w-full object-contain
+                                desktop:h-48 mobile:h-40">
+                    <div class="p-6 desktop:w-2/3">
+                        <h3 class="text-xl font-bold mb-2">{{ news.title }}</h3>
+                        <p class="text-gray-600 mb-4">{{ news.description }}</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500">{{ news.date }}</span>
+                            <button class="text-blue-500 hover:text-blue-700">Read more</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 유저 랭킹 top5 -->
+        <div class="desktop:col-span-1 bg-white rounded-lg shadow-lg p-6">
+            <h2 class="text-xl font-bold mb-4">Top 5.</h2>
+            <div class="space-y-4">
+                <div v-for="(rank, index) in topRanks" :key="rank.id" 
+                    class="flex items-center space-x-4 p-2 hover:bg-gray-100 rounded-lg transition-colors duration-200">
+                    <div :class="[
+                        'w-8 h-8 flex items-center justify-center rounded-full font-bold',
+                        index === 0 ? 'bg-yellow-400 text-white' :
+                        index === 1 ? 'bg-gray-300 text-white' :
+                        index === 2 ? 'bg-amber-600 text-white' :
+                        'bg-gray-100'
+                    ]">
+                        {{ index + 1 }}
+                    </div>
+                    <img :src="rank.avatar" alt="User avatar" class="w-10 h-10 object-cover rounded-full">
+                    <div>
+                        <div class="font-semibold">{{ rank.username }}</div>
+                        <div class="text-sm text-gray-500">{{ rank.points }} pts</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
     <!-- 스폰서 섹션 -->
     <h2 class="text-center mt-8 w-full flex">
         <div class="flex mx-auto">
@@ -188,6 +238,31 @@ export default {
         const defaultImage2 = './assets/players/hillstate/hil_MB_이다현.png'
         const hoverImage2 = './assets/egg/easteregg1.gif'
 
+        const topRanks = ref([
+            { id: 1, username: "배구의신", points: 990, avatar: "./assets/ball.jpg" },
+            { id: 2, username: "김연경팬", points: 887, avatar: "./assets/glass.jpg" },
+            { id: 3, username: "배구조아", points: 725, avatar: "./assets/user-img-2.jpg" },
+            { id: 4, username: "마로마로123", points: 712, avatar: "./assets/user-img-1.jpg" },
+            { id: 5, username: "혁명적인거북이", points: 711, avatar: "./assets/sample2.png" },
+        ])
+
+        const newsItems = ref([
+            {
+                id: 1,
+                thumbnail: "./assets/sample.png",
+                title: "2024 KEIEN 리그 개막 임박!",
+                description: "오는 10월, 기대되는 2024 KEIEN 리그가 시작됩니다. 이번 시즌에는 어떤 팀이 우승할까요?",
+                date: "3일 전"
+            },
+            {
+                id: 2,
+                thumbnail: "./assets/sample2.png",
+                title: "판타지 리그 업데이트 소식",
+                description: "새로운 시즌을 맞아 판타지 리그가 업데이트됩니다. 달라진 포인트 시스템과 새로운 보상을 확인하세요!",
+                date: "1주일 전"
+            },
+        ])
+
         const rotateText = () => {
         currentTextIndex.value = (currentTextIndex.value + 1) % texts.value.length
         }
@@ -211,7 +286,9 @@ export default {
             texts,
             cacheStore,
             modalStore,
-            persistStore
+            persistStore,
+            topRanks,
+            newsItems,
         }
     },
     data(){
