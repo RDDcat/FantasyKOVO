@@ -65,7 +65,7 @@ export default {
         const persistStore = usePersistStore()
 
         const displayedPlayers = ref([])
-        const selectedPlayers = ref([null, null, null, null, null, null])
+        const selectedPlayers = ref([null, null, null, null, null, null, null, null, null, null])
 
         const positions = [
             { class: 'mobile:top-32 mobile:left-[22%] mobile:w-12 mobile:h-12 desktop:top-56 desktop:left-[22%] desktop:w-24 desktop:h-24' },
@@ -74,6 +74,10 @@ export default {
             { class: 'mobile:top-60 mobile:left-[22%] mobile:w-12 mobile:h-12 desktop:top-[440px] desktop:left-[22%] desktop:w-24 desktop:h-24' },
             { class: 'mobile:top-60 mobile:left-[45%] mobile:w-12 mobile:h-12 desktop:top-[440px] desktop:left-[45%] desktop:w-24 desktop:h-24' },
             { class: 'mobile:top-60 mobile:left-[68%] mobile:w-12 mobile:h-12 desktop:top-[440px] desktop:left-[68%] desktop:w-24 desktop:h-24' },
+            { class: 'mobile:top-[21rem] mobile:left-[20%] mobile:w-12 mobile:h-12 desktop:top-[620px] desktop:left-[20%] desktop:w-24 desktop:h-24' },
+            { class: 'mobile:top-[21rem] mobile:left-[36%] mobile:w-12 mobile:h-12 desktop:top-[620px] desktop:left-[36%] desktop:w-24 desktop:h-24' },
+            { class: 'mobile:top-[21rem] mobile:left-[54%] mobile:w-12 mobile:h-12 desktop:top-[620px] desktop:left-[54%] desktop:w-24 desktop:h-24' },
+            { class: 'mobile:top-[21rem] mobile:left-[70%] mobile:w-12 mobile:h-12 desktop:top-[620px] desktop:left-[70%] desktop:w-24 desktop:h-24' },
         ]
 
         const isPlayerSelected = computed(() => (player) => {
