@@ -8,14 +8,23 @@
             mobile:w-full 
             desktop:w-[800px] z-0" src="@/assets/stadium.jpg" alt="">
         <!-- 포지션 -->
-        <div v-for="(position, index) in positions" :key="index"
-            class="absolute z-10 rounded-full bg-white ring-4 ring-gray-800 hover:bg-gray-600"
-            :class="position.class">
-            <img v-if="selectedPlayers[index]" 
-                :src="selectedPlayers[index].img" 
-                class="w-full h-full object-cover rounded-full" 
-                :alt="selectedPlayers[index].name">
-        </div>
+        <TransitionGroup
+            name="fade-up"
+            tag="div"
+            appear
+        >
+            <template v-if="showPositions">
+                <div v-for="(position, index) in positions" :key="index"
+                    class="position-item absolute z-10 rounded-full bg-white ring-4 ring-gray-800 hover:bg-gray-600"
+                    :class="position.class"
+                    :style="{ animationDelay: `${index * 100}ms` }">
+                    <img v-if="selectedPlayers[index]" 
+                        :src="selectedPlayers[index].img" 
+                        class="w-full h-full object-cover rounded-full" 
+                        :alt="selectedPlayers[index].name">
+                </div>
+            </template>
+        </TransitionGroup>
     </div>
 
     <!-- 선수 리스트 -->
@@ -66,6 +75,7 @@ export default {
 
         const displayedPlayers = ref([])
         const selectedPlayers = ref([null, null, null, null, null, null, null, null, null, null])
+        const showPositions = ref(false)
 
         const positions = [
             { class: 'mobile:top-32 mobile:left-[22%] mobile:w-12 mobile:h-12 desktop:top-56 desktop:left-[22%] desktop:w-24 desktop:h-24' },
@@ -106,6 +116,8 @@ export default {
 
         onMounted(() => {
             selectRandomPlayers()
+            // 컴포넌트가 마운트된 후 포지션을 표시
+            showPositions.value = true
         })
 
         const toggleLikePlayer = (id) => {
@@ -144,6 +156,7 @@ export default {
             displayedPlayers,
             selectedPlayers,
             positions,
+            showPositions,
             isPlayerSelected,
             toggleLikePlayer,
             togglePlayerSelection,
@@ -156,4 +169,27 @@ export default {
 </script>
 
 <style scoped>
+.fade-up-enter-active,
+.fade-up-appear-active {
+    animation: fade-up 0.5s ease-out both;
+}
+
+@keyframes fade-up {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.position-item {
+    transition: background-color 0.3s ease;
+}
+
+.position-item:hover {
+  background-color: #4B5563;  /* Tailwind's gray-600 */
+}
 </style>
