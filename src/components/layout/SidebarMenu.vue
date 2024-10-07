@@ -44,10 +44,13 @@ export default {
             this.index = index;
             if(index === 0)
                 this.$router.push({ name: 'team' });
+                this.modalStore.isSidebarMenu = !this.modalStore.isSidebarMenu;
             if(index === 1)
                 this.$router.push({ name: 'my' });
+                this.modalStore.isSidebarMenu = !this.modalStore.isSidebarMenu;
             if(index === 2)
                 this.$router.push({ name: 'rank' });
+                this.modalStore.isSidebarMenu = !this.modalStore.isSidebarMenu;
         },
     },
 }
