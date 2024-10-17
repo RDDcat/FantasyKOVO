@@ -1,7 +1,9 @@
 <template>
 <!-- 랭킹 페이지 -->
-<div class="container mx-auto px-4 py-8">
-    <h1 class="text-3xl font-bold mb-6 text-center">2024 KEIEN 판타지 랭킹</h1>
+<div class="flex flex-col container mx-auto px-4 py-8">
+    <h1 class="flex mx-auto text-3xl font-bold mb-6 text-center mobile:text-xl">2024 
+        <div class="text-blue-600">&nbsp;KOVO&nbsp;</div> 판타지 랭킹
+    </h1>
 
     <!-- 사용자의 순위 -->
     <div class="relative h-[25rem] banner rounded-lg shadow mb-8 cursor-pointer" @click="$router.push({ name: 'my' });">

@@ -2,17 +2,20 @@
 <!-- 마이페이지 -->    
 <div class="flex-col items-center">
     <h1 class="px-20 py-6 mobile:p-4 font-bold text-xl">내 선수단</h1>
-    <div class="grid grid-cols-3 gap-4 p-20
-                mobile:grid-cols-3 mobile:p-4 mobile:gap-2">
+    <div class="grid grid-cols-5 gap-4 p-20
+                mobile:grid-cols-2 mobile:p-4 mobile:gap-2">
         <!-- 내 선수단 카드 -->
-        <div v-for="player in cacheStore.myTeam.players" :key="player.id"
+        <div v-for="(player, index) in myTeam" :key="index"
             class="relative bg-white rounded-lg shadow-md overflow-hidden">
-            <img :src="player.img" 
+            <img v-if="player" :src="player.img" 
                 class="w-full aspect-square object-cover"/>
-            <div class="p-2 text-base">
+            <div v-if="player" class="p-2 text-base">
                 <h3 class="font-bold mb-1">{{player.name}}</h3>
                 <p class="flex mb-1 text-xs text-gray-600">{{player.position.name}} <img class="w-4" :src="player.position.img" /></p>
                 <p class="text-xs text-gray-600 break-words">{{player.team.name}}</p>
+            </div>
+            <div v-else class="p-2 text-base text-center">
+                <p>빈 자리</p>
             </div>
         </div>
     </div>
@@ -61,6 +64,8 @@ export default {
                 myTeam.value = persistStore.selectedTeam.map(id => 
                     id ? cacheStore.players.find(player => player.id === id) : null
                 )
+            } else {
+                myTeam.value = Array(10).fill(null)
             }
         }
 
