@@ -48,6 +48,37 @@
         제출하기
       </button>
     </div>
+
+    <!-- 필터 버튼 섹션 -->
+    <div class="mb-6 flex flex-wrap justify-center gap-2">
+      <button
+        @click="selectRandomPlayers"
+        class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600"
+      >
+        랜덤 추천
+      </button>
+      <button
+        v-for="team in teams"
+        :key="team"
+        @click="filterPlayers('team', team)"
+        class="px-4 py-2 bg-gray-200 text-gray-800 rounded-lg hover:bg-gray-300"
+        :class="{ 'bg-blue-500 text-white': activeFilters.team === team }"
+      >
+        {{ team }}
+      </button>
+      <button
+        v-for="position in filterPositions"
+        :key="position.name"
+        @click="filterPlayers('position', position.name)"
+        class="px-4 py-2 bg-gray-200 text-gray-800 rounded-lg hover:bg-gray-300"
+        :class="{
+          'bg-blue-500 text-white': activeFilters.position === position.name,
+        }"
+      >
+        {{ position.name }}
+      </button>
+    </div>
+
     <!-- 선수 리스트 -->
     <!-- 선수 카드 섹션 -->
     <h2 class="desktop:text-3xl mobile:text-2xl font-bold mb-6 text-center">
@@ -56,7 +87,7 @@
     <div class="grid grid-cols-4 gap-4 p-20 mobile:grid-cols-2 mobile:p-4">
       <!-- 선수 카드 -->
       <div
-        v-for="(player, index) in displayedPlayers"
+        v-for="(player, index) in filteredPlayers"
         :key="index"
         class="relative bg-white rounded-lg shadow-md overflow-hidden cursor-pointer"
         :class="{ 'shadow-2xl ring-4 ring-blue-600': isPlayerSelected(player) }"
@@ -119,7 +150,7 @@ export default {
     ]);
     const showPositions = ref(false);
     const showMap = ref(false);
-
+    const activeFilters = ref({ team: null, position: null });
     const positions = [
       {
         class:
@@ -163,6 +194,75 @@ export default {
       },
     ];
 
+    // 팀과 포지션 목록 추출
+    const teams = computed(() => [
+      ...new Set(cacheStore.players.map((player) => player.team.name)),
+    ]);
+    const filterPositions = computed(() => {
+      const uniquePositions = new Set(
+        cacheStore.players.map((player) => player.position.name)
+      );
+      return Array.from(uniquePositions).map((name) => ({
+        name,
+        img: cacheStore.players.find((player) => player.position.name === name)
+          .position.img, // img도 가져오기
+      }));
+    });
+
+    const filteredPlayers = computed(() => {
+      let players = displayedPlayers.value;
+
+      if (activeFilters.value.team) {
+        players = players.filter(
+          (player) => player.team.name === activeFilters.value.team
+        );
+      }
+
+      if (activeFilters.value.position) {
+        players = players.filter(
+          (player) => player.position.name === activeFilters.value.position
+        );
+      }
+
+      return players;
+    });
+
+    const filterPlayers = (type, value) => {
+      // 필터 값이 이미 선택된 경우 제거
+      if (activeFilters.value[type] === value) {
+        activeFilters.value[type] = null;
+      } else {
+        // 새 필터 값을 설정
+        activeFilters.value[type] = value;
+      }
+
+      // 필터가 변경될 때마다 필터링된 선수 목록 업데이트
+      updateFilteredPlayers();
+    };
+
+    const updateFilteredPlayers = () => {
+      // 초기화
+      displayedPlayers.value = [...cacheStore.players];
+
+      if (activeFilters.value.team) {
+        displayedPlayers.value = displayedPlayers.value.filter(
+          (player) => player.team.name === activeFilters.value.team
+        );
+      }
+
+      if (activeFilters.value.position) {
+        displayedPlayers.value = displayedPlayers.value.filter(
+          (player) => player.position.name === activeFilters.value.position
+        );
+      }
+    };
+
+    const selectRandomPlayers = () => {
+      const shuffled = [...cacheStore.players].sort(() => 0.5 - Math.random());
+      displayedPlayers.value = shuffled.slice(0, 20);
+      activeFilters.value = { team: null, position: null };
+    };
+
     const isPlayerSelected = computed(() => (player) => {
       return selectedPlayers.value.includes(player);
     });
@@ -180,24 +280,6 @@ export default {
         }
       }
     };
-
-    const selectRandomPlayers = () => {
-      // cacheStore.players에서 랜덤하게 30명 선택
-      const shuffled = [...cacheStore.players].sort(() => 0.5 - Math.random());
-      displayedPlayers.value = shuffled.slice(0, 30);
-    };
-
-    onMounted(() => {
-      selectRandomPlayers();
-      // 지도 먼저 표시
-      setTimeout(() => {
-        showMap.value = true;
-      }, 100);
-      // 그 다음 포지션 표시
-      setTimeout(() => {
-        showPositions.value = true;
-      }, 600);
-    });
 
     const toggleLikePlayer = (id) => {
       if (typeof id === "undefined") {
@@ -232,6 +314,16 @@ export default {
       router.push("/mailing");
     };
 
+    onMounted(() => {
+      selectRandomPlayers();
+      setTimeout(() => {
+        showMap.value = true;
+      }, 100);
+      setTimeout(() => {
+        showPositions.value = true;
+      }, 600);
+    });
+
     return {
       cacheStore,
       modalStore,
@@ -239,6 +331,7 @@ export default {
       displayedPlayers,
       selectedPlayers,
       positions,
+      filterPositions,
       showPositions,
       showMap,
       isPlayerSelected,
@@ -248,6 +341,10 @@ export default {
       isPlayerLiked,
       saveTeam,
       openMailingPage,
+      teams,
+      filteredPlayers,
+      activeFilters,
+      filterPlayers,
     };
   },
 };
