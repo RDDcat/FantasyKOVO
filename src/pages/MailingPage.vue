@@ -134,7 +134,7 @@ export default {
 
     const handleEmailSubmit = async () => {
       try {
-        await axios.post("http://44.204.53.236:8080/email", {
+        await axios.post("https://back.playinfantasy.com/email", {
           email: email.value,
         });
         alertMessage.value = "이메일이 성공적으로 등록되었습니다.";
