@@ -2,7 +2,6 @@
   <!-- 메인 페이지 첫 랜딩 페이지 -->
   <div class="bg-gray-100 min-h-screen">
     <div class="container mx-auto px-4 py-8">
-      asdfasdfasdfsad
       <!-- 클릭 배너 -->
       <div
         style="font-family: SBAggroB"
