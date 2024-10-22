@@ -84,7 +84,7 @@
     <h2 class="desktop:text-3xl mobile:text-2xl font-bold mb-6 text-center">
       선수를 선택해주세요
     </h2>
-    <div class="grid grid-cols-4 gap-4 p-20 mobile:grid-cols-2 mobile:p-4">
+    <div class="grid grid-cols-6 gap-4 p-20 mobile:grid-cols-2 mobile:p-4">
       <!-- 선수 카드 -->
       <div
         v-for="(player, index) in filteredPlayers"
@@ -112,7 +112,7 @@
             {{ player.position.name }}
             <img class="w-4" :src="player.position.img" />
           </p>
-          <p class="text-gray-600">{{ player.team.name }}</p>
+          <p class="text-gray-600 text-xs">{{ player.team.name }}</p>
         </div>
       </div>
     </div>
