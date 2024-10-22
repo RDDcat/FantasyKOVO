@@ -5,20 +5,20 @@
 </template>
 
 <script>
-import NavigationMenu from '@/components/layout/NavigationMenu.vue'
-import FooterComponent from '@/components/common/FooterComponent'
+import NavigationMenu from "@/components/layout/NavigationMenu.vue";
+import FooterComponent from "@/components/common/FooterComponent";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
     NavigationMenu,
     FooterComponent,
-  }
-}
+  },
+};
 </script>
 
 <style>
 #app {
-  font-family: SBAggroB;
+  font-family: Wanted;
 }
 </style>
