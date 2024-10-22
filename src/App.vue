@@ -19,6 +19,6 @@ export default {
 
 <style>
 #app {
-  font-family: Wanted;
+  font-family: ONE-Mobile-Title;
 }
 </style>
