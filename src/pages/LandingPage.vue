@@ -21,7 +21,7 @@
               v-if="isHovered"
               class="ml-auto pt-6 transition-all duration-75 rounded-xl w-44"
             >
-              <svg
+              <!-- <svg
                 width="45"
                 height="47"
                 viewBox="0 0 45 47"
@@ -64,7 +64,7 @@
                     <rect width="45" height="47" fill="white"></rect>
                   </clipPath>
                 </defs>
-              </svg>
+              </svg> -->
             </div>
             <img
               v-else
@@ -318,23 +318,19 @@
       </div>
 
       <!-- 스폰서 섹션 -->
-      <h2 class="text-center mt-8 w-full flex">
+      <!-- <h2 class="text-center mt-8 w-full flex">
         <div class="flex mx-auto">
           <div class="text-yellow-400">S</div>
           ponser
         </div>
-      </h2>
-      <div class="flex w-full">
-        <!-- <div class="my-4 mx-auto grid grid-cols-6 mobile:grid-cols-3 gap-4 pb-8"> -->
+      </h2> -->
+      <!-- 스폰서 -->
+      <!-- <div class="flex w-full">
         <div
           class="mt-4 mb-12 mx-auto grid grid-cols-5 mobile:grid-cols-1 gap-4"
         >
-          <!-- 스폰서 -->
           <div></div>
           <div></div>
-          <!-- <div class="overflow-hidden ">
-                <img class=" object-cover rounded-xl" src="@/assets/kovo.png" alt="">
-            </div> -->
           <div
             class="bg-white px-6 py-4 rounded-xl flex gap-[7px] justify-center items-center overflow-hidden"
           >
@@ -387,7 +383,7 @@
           <div></div>
           <div></div>
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
 </template>
